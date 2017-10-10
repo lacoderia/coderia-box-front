@@ -1,0 +1,541 @@
+.profile-component
+  margin: 0
+
+  h2, p
+    margin: 0
+
+  user
+    display: inline-block
+    margin: 1rem 0
+    vertical-align: middle
+    width: 49%
+
+    @media screen and (max-width: $screen-xs-max)
+      display: block
+      margin: 0 0 1rem
+      width: 100%
+
+    .user-image
+      background: black
+      border: 4px solid $color-red-1
+      border-radius: 50%
+      display: inline-block
+      height: 70px
+      margin: 0 0.5rem 0 0
+      min-width: 70px
+      vertical-align: middle
+      width: 70px
+
+      @media screen and (max-width: $screen-xs-max)
+        display: block
+        margin: 0 auto
+
+      &.icon-user
+        color: $color-white
+        font-size: 2.5rem
+        position: relative
+
+        &:before
+          bottom: 0
+          left: 50%
+          position: absolute
+          top: 50%
+          transform: translate(-50%, -70%)
+
+
+    .user-info
+      display: inline-block
+      overflow: hidden
+      padding: 0 1rem
+      vertical-align: middle
+      white-space: nowrap
+
+      @media screen and (max-width: $screen-xs-max)
+        display: block
+        padding: 0
+        text-align: center
+        width: 100%
+
+      span
+        display: block
+
+      .user-name
+        color: black
+        font-size: 1.4rem
+        font-weight: bold
+        max-width: 276px
+        overflow: hidden
+        text-overflow: ellipsis
+        width: 100%
+
+      .user-mail
+        max-width: 276px
+        overflow: hidden
+        text-overflow: ellipsis
+        width: 100%
+
+    .button-red
+      display: block
+      font-size: 1rem
+      margin: 0.6rem auto 0
+      max-width: 200px
+      width: 100%
+
+  .profile-payment-module
+    .new-card-btn
+      max-width: 380px
+
+  .account-module
+    width: 100%
+
+    .special-form
+      margin-bottom: 2rem
+
+  .profile-container
+    display: flex
+    justify-content: flex-start
+
+    @media screen and (max-width: $screen-xs-max)
+      display: block
+      width: 100%
+
+    .profile-menu
+      box-sizing: border-box
+      margin: 4rem 0
+      max-width: 110px
+      vertical-align: top
+      width: 10%
+
+      @media screen and (max-width: $screen-xs-max)
+        bottom: 0
+        display: block
+        left: 0
+        margin: 1rem 0 0
+        max-width: none
+        position: fixed
+        width: 100%
+        z-index: 1000
+
+      ul
+        background: white
+        list-style-type: none !important
+        margin: 0 !important
+        padding: 0 !important
+        width: 100%
+
+        @media screen and (max-width: $screen-xs-max)
+          background: black
+          display: table
+          width: 100%
+
+        li
+          border: 1px solid $color-gray-1
+          border-right: none
+          border-radius: 10px 0 0 10px
+          cursor: pointer
+          margin-bottom: 0.2rem
+          max-width: 110px
+          min-height: 100px
+          padding: 0.8rem 1.2rem
+          text-align: center
+          width: 100%
+
+          @media screen and (max-width: $screen-xs-max)
+            border: none
+            border-radius: 0
+            color: white
+            display: table-cell
+            max-width: none
+            width: 25%
+
+
+          &.selected
+            background: white
+            cursor: default
+            position: relative
+
+            @media screen and (max-width: $screen-xs-max)
+              background: black
+              color: $color-red-1
+
+            &:after
+              background: white
+              bottom: 0
+              content: ''
+              display: inline-block
+              height: 100%
+              position: absolute
+              right: -2px
+              width: 6px
+              z-index: 100
+
+              @media screen and (max-width: $screen-xs-max)
+              display: none
+
+          icon
+            display: block
+            height: 32px
+            margin: 0.4rem auto
+            font-size: 2rem
+
+          .item-name
+            display: block
+            font-size: 0.6rem
+            font-weight: bold
+            line-height: 16px
+
+            @media screen and (max-width: $screen-xs-max)
+              display: none
+
+
+    .modules-container
+      border-left: 1px solid $color-gray-2
+      box-shadow: -2px 0px 3px -2px rgba(0,0,0,0.3)
+      box-sizing: border-box
+      margin: 2rem 0
+      padding: 0.4rem 2rem 0.4rem 3.5rem
+      position: relative
+      vertical-align: top
+      width: 89%
+
+      @media screen and (max-width: $screen-xs-max)
+        border: none
+        box-shadow: none
+        padding: 0rem
+        width: 100%
+
+      &:before, &:after
+        background: white
+        content: ""
+        height: 2px
+        left: 0
+        position: absolute
+        width: 100%
+
+      &:before
+        top: -2px
+
+      &:after
+        bottom: -2px
+
+      .module-name
+        color: black
+        font-size: 1.5rem
+        font-weight: normal
+        margin-bottom: 2rem
+        text-align: left
+
+      .dashboard
+        margin: 0
+
+        .button
+          cursor: pointer
+
+        ul.modules
+          display: block
+          list-style-type: none !important
+          margin: 0
+          padding: 0 !important
+          width: 100%
+
+          li
+            margin: 0 0 1rem
+            padding: 2rem
+            text-align: center
+
+            &:last-child
+              margin-bottom: 0
+
+            icon
+              color: black
+              display: block
+              font-size: 3rem
+              margin: 0 auto 0.5rem
+
+      .resume
+        align-items: center
+        display: inline-flex
+        font-size: 0rem
+        justify-content: flex-start
+        list-style-type: none !important
+        margin: 0.8rem 0 !important
+        padding: 0 !important
+        vertical-align: top
+        width: 50%
+
+        @media screen and (max-width: $screen-xs-max)
+          display: block
+          margin: 0 !important
+          text-align: center
+          width: 100%
+
+
+        li
+          display: inline-block
+          font-size: 1rem
+          margin-right: 4rem
+          text-align: left
+
+          @media screen and (max-width: $screen-xs-max)
+            margin: 0
+            width: 48%
+
+          &:last-child
+            margin-right: 0
+
+            @media screen and (max-width: $screen-xs-max)
+              margin-left: 1%
+
+          span
+            display: block
+            line-height: 100%
+            text-align: center
+
+            &.label
+              color: $color-red-1
+              font-size: 0.8rem
+              font-weight: bold
+              margin-top: 0.6rem
+
+            &.digit
+              color: black
+              font-size: 1.3rem
+
+
+      .resume-module
+        margin: 4rem 0 4rem
+        position: relative
+
+  .button-red
+    display: block
+    font-size: 1rem
+    margin: 1.5rem auto
+    transform: none
+    width: 100%
+
+
+
+.icon-principal:before
+  font-family: 'ETmodules'
+  content: "\52"
+  color: rgba(0,0,0,0.9)
+
+.icon-arrow-right:before
+  font-family: 'ETmodules'
+  content: "\35"
+  color: rgba(0,0,0,0.9)
+
+.icon-arrow-down:before
+  font-family: 'ETmodules'
+  content: "\33"
+  color: rgba(0,0,0,0.9)
+
+.social-activity
+  margin: 0
+  padding: 0
+  position: relative
+  width: 100%
+
+  .border-container
+    border: 4px dashed black
+    border-radius: 10px
+    display: inline-block
+    max-width: 410px
+    margin: 0 1rem 1.2rem 0
+    padding: 2rem
+    position: relative
+    vertical-align: top
+    width: 100%
+
+    &.no-border
+      border: none
+      transition: ease 0.5s
+
+      &:before
+        display: none
+
+    &:before
+      background: white url('../images/scissors-icon.png') no-repeat center center
+      background-size: 100%
+      content: ""
+      height: 50px
+      position: absolute
+      left: 0px
+      top: 0px
+      transform: translate(-30px, -60%)
+      width: 50px
+
+    h4
+      align-items: center
+      display: flex
+      justify-content: space-around
+      text-align: left
+
+      span
+        font-size: 1.4rem
+        line-height: 30px
+        width: 50%
+
+      span.price
+        display: block
+        font-size: 4rem
+        font-weight: bold
+        line-height: 70px
+
+    p
+      line-height: 1rem
+      text-align: center
+      margin-bottom: 2.5rem
+
+    .coupon
+      background: black
+      color: red
+      font-size: 1.8rem
+      margin-bottom: 1.5rem
+      padding: 0.6rem 1rem
+      text-align: center
+
+
+    .form
+      padding: 2rem 1rem
+      width: 100%
+
+      fieldset
+        margin-bottom: 1rem
+        position: relative
+
+      p
+        color: white
+        font-size: 1.3rem
+        line-height: 1.5rem
+
+      .action-button
+        background: transparent
+        width: 100%
+
+        &:after
+          content: '\e076'
+          font-family: 'ETmodules'
+          font-size: 1rem
+          height: auto
+          position: absolute
+          right: 0
+          top: 0
+          transform: translate(-8px, 40%)
+          width: 20px
+
+
+
+        &:hover
+          background: white
+          color: black
+
+      .required-message
+        position: absolute
+        min-height: 24px
+        text-align: center
+        transform: translateY(-26px)
+        width: 100%
+
+    @media screen and (max-width: $screen-xs-max)
+      margin: 0 0 1.2rem
+
+    icon
+      cursor: pointer
+      font-size: 1rem
+      font-weight: bold
+      position: absolute
+      right: 8px
+      top: 8px
+
+      &.close
+        color: white
+
+        &:before
+          content: '\51'
+          font-family: 'ETmodules'
+
+    .station-info
+      border-left: 2px dashed $color-gray-1
+      display: inline-block
+      padding: 1rem
+      position: relative
+      vertical-align: middle
+      width: 65%
+
+      @media screen and (max-width: $screen-xs-max)
+        padding: 0 0.4rem
+
+
+      .station-info-container
+        display: flex
+        border-collapse: separate
+        border-spacing: 1rem 0
+        width: 100%
+
+        .data
+          color: black
+          display: flex
+          font-size: 1rem
+          max-width: 100px
+          overflow: hidden
+          text-align: left
+          text-overflow: ellipsis
+          white-space: nowrap
+          width: 55%
+
+          @media screen and (max-width: $screen-xs-max)
+            font-size: 0.8rem
+
+        .label
+          color: $color-red-1
+          display: flex
+          font-size: 0.8rem
+          font-weight: bold
+          justify-content: flex-end
+          width: 45%
+
+          @media screen and (max-width: $screen-xs-max)
+            font-size: 0.6rem
+
+
+    .ticket-date
+      color: black
+      display: inline-block
+      padding: 1.3rem 0.6rem 1rem
+      text-align: center
+      vertical-align: middle
+      width: 33%
+
+      span
+        display: block
+
+        &.day
+          font-size: 1rem
+          margin: 0.3rem 0
+
+          @media screen and (max-width: $screen-xs-max)
+            margin: 0.1rem 0
+            font-size: 0.8rem
+
+        &.hour
+          font-size: 2rem
+
+          @media screen and (max-width: $screen-xs-max)
+            font-size: 1.4rem
+
+        &.status
+          font-size: 0.9rem
+          font-weight: bold
+
+          @media screen and (max-width: $screen-xs-max)
+            font-size: 0.7rem
+
+          &.appointment-booked
+            color: $color-red-1
+
+          &.appointment-canceled
+            color: $color-gray-2
+
+          &.appointment-finalized
+            color: $color-black

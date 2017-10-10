@@ -1,0 +1,277 @@
+.classroom-component
+  margin: 4rem auto 6rem
+  max-width: 900px
+  width: 100%
+
+  @media screen and (max-width: $screen-xs-max)
+    margin: 2rem auto
+    padding: 0 1rem
+
+  h2, p
+    text-align: center
+
+
+  .classroom-container
+    margin: 2rem 0
+    position: relative
+
+    .door
+      border: 2px solid black
+      border-radius: 3px
+      color: black
+      display: inline-block
+      font-size: 0.6rem
+      right: 11%
+      padding: 0 16px
+      position: absolute
+      bottom: 120px
+
+      @media screen and (max-width: $screen-xs-max)
+        font-size: 0.4rem
+        padding: 0 8px
+
+    .dj
+      border: 2px solid black
+      border-radius: 3px
+      color: black
+      display: inline-block
+      font-size: 0.6rem
+      left: 11.11111%
+      max-width: 11.11111%
+      overflow: hidden
+      padding: 0 16px
+      position: absolute
+      text-align: center
+      text-overflow: ellipsis
+      top: 0%
+
+      @media screen and (max-width: $screen-xs-max)
+        font-size: 0.4rem
+        line-height: 0.8rem
+        max-width: 40px
+        padding: 0 4px
+
+    .fan
+      top: 0%
+      display: inline-block
+      max-width: 20px
+      position: absolute
+      width: 100%
+
+      @media screen and (max-width: $screen-xs-max)
+        bottom: 50px
+        max-width: 15px
+
+      &.fan-1
+        left: 27%
+
+      &.fan-2
+        left: 38%
+
+      &.fan-3
+        left: auto !important
+        top: auto !important
+        bottom: 124px
+        right: 27%
+
+        @media screen and (max-width: $screen-xs-max)
+          left: 90px
+
+    .station-instructor
+      background: transparent url("../images/tarima.png") no-repeat
+      background-size: 100px 100px
+      color: white
+      font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+      font-size: 0.875rem
+      height: 100px
+      left: 50%
+      margin-bottom: 35px
+      position: absolute
+      text-align: center
+      top: 50%
+      transform: translate(-50%, -50%)
+      width: 100px
+
+      >span
+        font-size: 0.7rem
+        font-weight: bold
+        left: 50%
+        max-width: 74px
+        overflow: hidden
+        position: absolute
+        text-overflow: ellipsis
+        top: 0
+        transform: translate(-50%, 170%)
+        white-space: nowrap
+
+        @media screen and (max-width: $screen-xs-max)
+          transform: translate(-50%, 60%)
+
+      @media screen and (max-width: $screen-xs-max)
+        background-size: 50px 50px
+        height: 50px
+        width: 50px
+
+
+    ul
+      display: table
+      line-height: initial !important
+      list-style: none !important
+      margin: 0
+      min-height: 50px
+      padding: 0 !important
+      table-layout: fixed
+      width: 100%
+
+      li
+        text-align: center
+
+        @media screen and (max-width: $screen-xs-max)
+          padding: 0.3rem 0rem
+
+      .station-container
+        display: table-cell
+        text-align: center
+
+        &.inactive
+          .station
+            display: none
+
+        &.active
+          cursor: pointer
+
+          .station
+            opacity: 1
+
+        &.booked
+          .station
+            background-color: $color-gray-5
+            border-color: $color-gray-5
+            cursor: auto
+
+            .station-number
+              color: $color-white
+
+          .station-description
+            color: $color-gray-5
+
+          &:hover
+            .station
+              background-color: $color-gray-5
+              border-color: $color-gray-5
+
+            .station-description
+              color: $color-gray-5
+
+        &.my-booked-station
+          .station
+            background-color: $color-red-1
+            border-color: $color-red-1
+
+            .station-number
+              color: $color-white
+
+          .station-description
+            color: $color-red-1
+
+          &:hover
+            .station
+              background-color: $color-red-1
+              border-color: $color-red-1
+
+            .station-description
+              color: $color-red-1
+
+        &.selected
+          .station
+            border-color: $color-red-1
+            cursor: pointer
+
+            .station-number
+              color: $color-red-1
+
+        &.top
+          border-top: 4px solid $color-red-1
+
+        &.bottom
+          border-bottom: 4px solid $color-red-1
+
+        &.right
+          border-right: 4px solid $color-red-1
+
+        &.left
+          border-left: 4px solid $color-red-1
+
+        .station
+          border: 4px solid $color-black
+          border-radius: 50%
+          display: inline-block
+          height: 50px
+          position: relative
+          width: 50px
+          z-index: 100
+
+          @media screen and (max-width: $screen-xs-max)
+            border-width: 2px
+            height: 30px
+            position: relative
+            width: 30px
+
+          .my-station
+            position: absolute
+            right: -20px
+            top: 13px
+
+            &:before
+              color: $color-red-1
+              content: '\e08a'
+              height: 20px
+              font-family: 'ETmodules'
+              font-size: 1rem
+              width: 20px
+
+          .station-number
+            color: $color-red-3
+            font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+            font-size: 0.7rem
+            font-weight: bold
+            position: relative
+            top: 13px
+
+            @media screen and (max-width: $screen-xs-max)
+              font-size: 0.5rem
+              right: 0px
+              top: 7px
+
+        .station-description
+          color: $color-black
+          margin-bottom: 0.3rem
+          margin-top: 0.3rem
+          font-size: 0.6rem
+
+          @media screen and (max-width: $screen-xs-max)
+            font-size: 0.4rem
+
+        &:hover
+
+          .station
+            border-color: $color-red-1
+
+          .station-description
+            color: $color-red-1
+
+
+  .actions
+    text-align: center
+
+    .close-link
+      color: $color-red-1
+      font-weight: bold
+      display: inline-block
+      font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+      margin: 1rem auto 2rem
+
+      &:hover
+        color: $color-red-3
+
+

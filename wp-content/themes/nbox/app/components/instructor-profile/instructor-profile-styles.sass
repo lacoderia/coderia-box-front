@@ -1,0 +1,248 @@
+.instructors-profile-component
+  margin: 1rem auto 0
+  width: 100%
+
+  instructor
+    border-collapse: separate
+    border-spacing: 3rem
+    display: table
+    margin: 0 auto 3rem
+    max-width: 1024px
+    width: 100%
+
+    @media screen and (max-width: $screen-xs-max)
+      display: block
+      padding: 0 1.5rem
+
+    picture
+      display: table-cell
+      vertical-align: top
+      width: 50%
+
+      @media screen and (max-width: $screen-xs-max)
+        display: block
+        width: 100%
+
+      img
+        width: 100%
+
+    bio
+      display: table-cell
+      vertical-align: top
+      width: 50%
+
+      @media screen and (max-width: $screen-xs-max)
+        display: block
+        width: 100%
+
+      h2
+        color: $color-black
+
+      p
+        font-size: 1rem
+        margin: 1rem 0 0
+
+
+  .calendar
+    margin: 2rem auto 0
+    max-width: 1024px
+    width: 100%
+
+    @media screen and (max-width: $screen-xs-max)
+      padding: 0 1.5rem
+
+    .calendar-filters
+      margin: 1.4rem 0 0 0
+
+    .week-label
+      font-size: 1.2rem
+
+    ul
+      list-style-type: none !important
+
+    >ul
+      margin: 2rem 0 !important
+      padding: 0 !important
+      width: 100%
+
+      >li
+        display: table
+        margin: 1rem 0 2rem
+        width: 100%
+
+        @media screen and (max-width: $screen-xs-max)
+          display: block
+
+        ul
+          display: flex
+          margin: 1rem 0 !important
+          padding: 0 !important
+          width: 100%
+
+          @media screen and (max-width: $screen-xs-max)
+            display: block
+
+          li
+            &.class
+              border: 1px solid $color-gray-1
+              box-sizing: border-box
+              color: $color-black
+              cursor: pointer
+              display: flex
+              flex-direction: column
+              font-size: 1.4rem
+              justify-content: center
+              margin: 0 0.4rem 0.4rem 0
+              max-width: 142px
+              min-height: 132px
+              overflow: hidden
+              padding: 1.4rem 0.4rem
+              position: relative
+              text-align: center
+              transition: ease 0.5s
+              width: 100%
+
+              @media screen and (max-width: $screen-xs-max)
+                display: block
+                max-width: none
+
+              &.disabled
+                background: $color-gray-4
+                +striped-bg(#CCC, 4%)
+                cursor: default
+                opacity: 0.4
+
+                .class-time, .class-title
+                  color: $color-gray-3 !important
+
+              &.selectable
+                cursor: pointer !important
+
+              &.enabled
+                &:hover
+                  background: $color-black
+                  color: $color-white
+
+                  .class-title
+                    color: $color-white
+
+                &.special
+                  border: 2px solid $color-red-1
+
+                  &:hover
+                    background: $color-red-1
+
+                    .class-description
+                      color: $color-white
+
+                    .class-title
+                      color: $color-black
+
+                &.warning
+                  .class-title
+                    color: $color-red-1
+
+              .class-description
+                color: $color-red-1
+                display: block
+                overflow: hidden
+                padding: 0 2px
+                font-size: 0.7rem
+                font-weight: bold
+                width: 100%
+
+              .class-dj
+                display: block
+                overflow: hidden
+                font-size: 0.7rem
+                font-weight: bold
+                line-height: 10px
+                margin: 0rem 0 0.4rem
+
+                span
+                  background-color: $color-red-1
+                  border-radius: 3px
+                  color: $color-white
+                  display: inline-block
+                  padding: 4px 6px 3px 6px
+
+              .class-title
+                display: block
+                color: $color-black
+                font-size: 0.9rem
+                line-height: 1rem
+                margin: 0.2rem 0 0
+
+              .ribbon
+                position: absolute
+                right: -10px
+                top: -10px
+                z-index: 1
+                overflow: hidden
+                width: 75px
+                height: 75px
+                text-align: right
+
+                span
+                  font-size: 10px
+                  font-weight: bold
+                  color: #000
+                  text-transform: uppercase
+                  text-align: center
+                  line-height: 15px
+                  transform: rotate(45deg)
+                  -webkit-transform: rotate(45deg)
+                  width: 100px
+                  display: block
+                  background: $color-yellow-1
+                  background: linear-gradient($color-yellow-1 0%, $color-yellow-1 100%)
+                  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1)
+                  padding-top: 3px
+                  position: absolute
+                  top: 19px
+                  right: -21px
+
+                span::before
+                  content: ""
+                  position: absolute
+                  left: 0px
+                  top: 100%
+                  z-index: -1
+                  border-left: 3px solid $color-yellow-1
+                  border-right: 3px solid transparent
+                  border-bottom: 3px solid transparent
+                  border-top: 3px solid $color-yellow-1
+
+                span::after
+                  content: ""
+                  position: absolute
+                  right: 0px
+                  top: 100%
+                  z-index: -1
+                  border-left: 3px solid transparent
+                  border-right: 3px solid $color-yellow-1
+                  border-bottom: 3px solid transparent
+                  border-top: 3px solid $color-yellow-1
+
+        .day-label
+          color: $color-black
+          display: table-cell
+          font-size: 2rem
+          padding: 1rem 0
+          text-align: center
+          vertical-align: middle
+          width: 15%
+
+          .day-number
+            display: block
+            font-size: 2.3rem
+
+          .day-title
+            display: block
+            font-size: 1rem
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+/**
+ * Default Look and Feel
+ */
+.alertify, .alertify-log
+  font-family: sans-serif
+
+.alertify
+  background: #FFF
+  border: 1px solid $color-gray-2
+  border-radius: 10px
+  background-clip: padding-box
+  color: $color-gray-3
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+
+.alertify-cover
+  background: black !important
+  opacity: 0.5 !important
+
+.alertify-confirm
+  top: 50% !important
+  transform: translateY(-50%) !important
+
+.alertify-dialog
+  padding: 2rem
+
+.alertify-message
+  font-size: 1.4rem
+  margin: 0 2rem 2rem
+
+.alertify-text
+  border: 1px solid $color-gray-3
+  padding: 10px
+  border-radius: 15px
+
+.alertify-button
+  border-radius: 3px
+  color: white
+  padding: 6px 15px
+  text-decoration: none
+  margin-right: 1rem
+  max-width: 100px
+  width: 100%
+
+  &:last-child
+    margin-right: 0
+
+.alertify-button:hover, .alertify-button:focus
+  outline: none
+  background-image: linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0))
+
+.alertify-button:focus
+  box-shadow: 0 0 4px rgba(26, 220, 255, 0.4)
+
+.alertify-button:active
+  position: relative
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)
+
+.alertify-button-cancel, .alertify-button-cancel:hover, .alertify-button-cancel:focus
+  background-color: #FE1A00
+  border: 1px solid #D83526
+
+.alertify-button-ok, .alertify-button-ok:hover, .alertify-button-ok:focus
+  background-color: #5CB811
+  border: 1px solid #3B7808
+
+.alertify-log
+  background: white
+  padding: 1rem 1rem 1rem 3rem
+  border-radius: 10px
+  color: $color-gray-3
+
+.alertify-log-error
+  border: 1px solid $color-gray-2
+  box-shadow: 0px 3px 5px 0px rgba(204,204,204,1)
+  overflow: hidden
+  position: relative
+
+  &:before
+    background: rgba(254,26,0,.9)
+    content: ""
+    height: 100%
+    left: 0
+    position: absolute
+    top: 0
+    width: 30px
+
+.alertify-log-success
+  border: 1px solid $color-gray-2
+  box-shadow: 0px 3px 5px 0px rgba(204,204,204,1)
+  overflow: hidden
+  position: relative
+
+  &:before
+    background: rgba(92,184,17,.9)
+    content: ""
+    height: 100%
+    left: 0
+    position: absolute
+    top: 0
+    width: 30px

@@ -1,0 +1,840 @@
+@charset "UTF-8"
+
+// External libraries
+@import "../js/bower_components/alertify/themes/alertify.core.css"
+
+// Fonts
+@import "styles/base/typography.css"
+@import "styles/base/icomoon.css"
+
+// Mixins
+@import "styles/mixins/mixins"
+
+// Variables
+@import "styles/base/variables"
+
+// Components
+@import "styles/components/alertify/nbox-alertify-theme"
+@import "components/navigation/navigation-styles"
+@import "components/login/login-styles"
+@import "components/packs/pack-styles"
+@import "components/calendar/calendar-styles"
+@import "components/classroom/classroom-styles"
+@import "components/payment/payment-styles"
+@import "components/instructors/instructor-styles"
+@import "components/instructor-profile/instructor-profile-styles"
+@import "components/booking/booking-styles"
+@import "components/profile/profile-styles"
+@import "components/social/social-styles"
+
+// Common styles
+#left-area
+  margin: 0 !important
+  padding: 0 !important
+
+a
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+
+.card-list
+  .button-red
+    margin: 1rem 0 1rem 0.5rem
+    transform: none
+
+
+card
+  border: none
+  display: inline-block
+  margin-right: 0.5rem
+  max-width: 380px
+  width: 100%
+
+  @media screen and (max-width: $screen-xs-max)
+    margin-left: 0rem
+
+  .card
+    position: relative
+    text-align: left
+
+    .action-link
+      cursor: pointer
+      display: inline-block
+      font-style: italic
+      margin-right: 1.5rem
+      text-align: center
+
+      &:hover
+        font-style: normal
+
+      &.cancel-class
+        color: red !important
+
+
+      &:last-child
+        margin-right: 0px
+
+    .card-info-brand
+      bottom: 0
+      position: absolute
+      right: 20px
+
+    .card-title
+      background: black
+      border-radius: 12px 12px 0 0
+      color: $color-white
+      font-size: 1rem
+      font-weight: bold
+      padding: 1rem
+
+    .card-info
+      border: 2px solid $color-gray-1
+      border-radius: 0 0 12px 12px
+      border-top: none
+      display: table
+      padding: 1rem 0
+      width: 100%
+
+      &.top-border
+        border-top: 2px solid $color-gray-1
+        border-radius: 12px
+        padding: 2rem
+
+        &:hover
+          box-shadow: 0px 0px 4px 0px rgba(26, 220, 255, 0.25)
+
+
+      .card-info-row
+        display: table
+        border-collapse: separate
+        border-spacing: 1rem 0
+        padding: 0 0 1rem 0
+        width: 100%
+
+        @media screen and (max-width: $screen-xs-max)
+          padding: 0 0 0.6rem 0
+
+        &:last-child
+          padding: 0
+
+        .card-info-cell
+          display: table-cell
+          vertical-align: middle !important
+
+          &.full-width
+            width: 100%
+
+          &.third-width
+            width: 23%
+
+          &.tow-thirds-width
+            width: 77%
+
+
+      .card-info-label
+        color: $color-gray-2
+        font-size: 0.8rem
+        font-weight: bold
+
+      .card-number
+        color: black
+        display: block
+        font-size: 1.4rem
+        margin: 1rem auto
+        text-align: center
+
+        @media screen and (max-width: $screen-xs-max)
+          font-size: 1rem
+
+      .card-name
+        color: black
+        display: block
+        font-size: 1.2rem
+        overflow: hidden
+
+      .card-expiration-date
+        color: black
+        display: inline-block
+
+      .card-expiration-date-label
+        color: $color-gray-2
+        display: inline-block
+        font-size: 0.8rem
+        margin-right: 1rem
+
+      input
+        background: transparent
+
+        &.readonly
+          color: black
+          border: none
+
+    .main-card
+      background: forestgreen
+      border-radius: 0 4px 4px 0
+      box-shadow: -2px 2px 5px 0px rgba(0, 0, 0, 0.3)
+      color: white
+      left: 0
+      padding: 0.3rem 0.8rem
+      position: absolute
+      top: 10px
+
+      @media screen and (max-width: $screen-xs-max)
+        padding: 0.2rem 0.4rem
+
+      .icon-main-card:before
+        font-family: 'ETmodules'
+        content: "\e052"
+
+.no-card
+  display: inline-block
+  max-width: 440px
+  width: 100%
+
+  .action-link
+    cursor: pointer
+    display: inline-block
+    margin: 1rem auto
+    text-align: center
+    width: 100%
+
+  .card-title
+    background: $color-gray-4
+    border-radius: 12px 12px 0 0
+    color: $color-gray-2
+    font-size: 1rem
+    font-weight: bold
+    padding: 1rem
+
+  .card-info
+    border: 2px dashed $color-gray-4
+    border-radius: 0 0 12px 12px
+    border-top: none
+    display: table
+    padding: 1rem 0
+    width: 100%
+
+    .card-info-row
+      display: table
+      border-collapse: separate
+      border-spacing: 1rem 0
+      padding: 0 0 1rem 0
+      width: 100%
+
+      &:last-child
+        padding: 0
+
+      .card-info-cell
+        display: table-cell
+        position: relative
+
+        &.full-width
+          width: 100%
+
+        &.third-width
+          width: 23%
+
+        &.tow-thirds-width
+          width: 77%
+
+
+    .card-info-label
+      color: $color-gray-2
+      font-size: 0.8rem
+      font-weight: bold
+
+    .card-info-brand
+      color: black
+      font-size: 2rem
+      vertical-align: bottom
+
+    input, select
+      color: black
+      border: 1px solid white
+      font-weight: normal
+      width: 100%
+
+  .button-red
+    display: inline-block
+    font-size: 16px
+    margin: 0
+    max-width: 100%
+    transform: none
+    width: 100%
+
+    &.disabled
+      background: $color-gray-4
+      border: $color-gray-4
+      color: $color-gray-2
+      cursor: default
+
+  &.active
+    transition: all 0.5s ease-in-out
+
+    .card-title
+      background: black
+      color: $color-white
+
+    .card-info
+      border: 2px solid $color-gray-1
+      border-top: none
+
+    .button-red
+      margin: 0
+
+      &.disabled
+        background: $color-red-1
+        border: $color-red-1
+        color: black
+
+    input, select
+      border: 1px solid $color-gray-1
+      color: black
+
+      &:focus
+        box-shadow: 0px 0px 4px 0px rgba(26, 220, 255, 0.25)
+
+  .required-message
+    bottom: -18px
+    font-size: 8px
+    position: absolute
+    right: 1rem
+    top: 50%
+    transform: translateY(-50%)
+
+    span
+      vertical-align: text-top
+
+h2
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+  font-size: 1.875rem
+  font-weight: bold
+
+p
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+  font-size: 0.875em
+
+select
+  border-radius: 0px !important
+  color: $color-gray-3
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+  font-size: .95em
+  font-weight: bold
+  height: 29px
+  padding: 5px 10px
+
+  &.filter
+    background: #F9FCFF
+    color: $color-red-1
+
+input
+  border-radius: 5px
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+  font-size: 0.8rem
+  padding: 0.4rem 1rem !important
+  height: 35px
+  width: 100%
+  width: 100%
+
+.animate-visibility
+  transition: all linear 0.5s
+
+  &.ng-hide
+    opacity: 0
+
+  &.ng-hide-add
+    animation: 0.5s hide
+
+  &.ng-hide-remove
+    animation: 0.5s show
+
+@keyframes hide
+  0%
+    opacity: 1
+    transform: scale(1)
+
+  30%
+    transform: scale(1.02)
+
+  100%
+    opacity: 0
+    transform: scale(0.5)
+
+@keyframes show
+  0%
+    opacity: 0
+    transform: scale(0.5)
+
+  70%
+    transform: scale(1.02)
+
+  100%
+    opacity: 1
+    transform: scale(1)
+
+
+@keyframes spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+
+.button-round
+  border-radius: 3px
+
+.button
+  transform: skewX(-10deg)
+
+  &:after
+    font-family: 'ETmodules'
+    color: $color-red-1
+    content: "\35"
+    position: absolute
+    right: 1rem
+    opacity: 0
+    top: 50%
+    transform: translateY(-50%)
+    transition: ease 0.5s
+
+  &:hover:not([disabled])
+    transform: skewX(0deg)
+
+    &:after
+      opacity: 1
+
+
+  &:disabled
+    cursor: default
+    opacity: 0.3
+
+.button-red
+  @extend .button
+  +button-bg($color-red-1, $color-black)
+
+  @media screen and (max-width: $screen-xs-max)
+    font-size: 1.4rem
+    padding: 1rem
+
+.button-white
+  background: white
+  border: 2px solid black
+  color: black
+  cursor: pointer
+  display: inline
+  font-size: 1rem
+  font-style: normal !important
+  padding: 0.3rem 1rem
+  transition: ease 0.5s
+  width: 100%
+
+  &:hover
+    background: black
+    color: white
+
+
+  @media screen and (max-width: $screen-xs-max)
+    font-size: 0.8rem
+
+
+.history-classes
+  margin: 0
+  padding: 0
+  width: 100%
+
+  .no-classes
+    @extend .no-items
+    margin-bottom: 1.2rem
+
+  ticket
+    border: 2px solid $color-gray-1
+    border-radius: 10px
+    display: inline-block
+    max-width: 410px
+    margin: 0 1rem 1.2rem 0
+    position: relative
+    vertical-align: top
+    width: 100%
+
+    @media screen and (max-width: $screen-xs-max)
+      margin: 0 0 1.2rem
+
+    &:last-child
+      margin-bottom: 0
+
+    &.appointment-cancelled
+      background: $color-gray-4
+      +striped-bg(#CCC, 4%)
+      cursor: default
+      opacity: 0.4
+
+      .label
+        color: $color-gray-2 !important
+
+    icon
+      cursor: pointer
+      font-size: 1rem
+      font-weight: bold
+      position: absolute
+      right: 8px
+      top: 8px
+
+      &.close
+        color: white
+
+        &:before
+          content: '\51'
+          font-family: 'ETmodules'
+
+    .more
+      color: black
+      content: 'Más'
+      cursor: pointer
+      font-size: 0.6rem
+      height: 20px
+      position: absolute
+      right: 16px
+      top: 8px
+      width: 40px
+
+    .station-info
+      border-left: 2px dashed $color-gray-1
+      display: inline-block
+      padding: 1rem
+      position: relative
+      vertical-align: middle
+      width: 65%
+
+      @media screen and (max-width: $screen-xs-max)
+        padding: 0 0.4rem
+
+
+      .station-info-container
+        display: flex
+        border-collapse: separate
+        border-spacing: 1rem 0
+        width: 100%
+
+        .data
+          color: black
+          display: flex
+          font-size: 1rem
+          max-width: 100px
+          overflow: hidden
+          padding-left: 10px
+          text-align: left
+          text-overflow: ellipsis
+          white-space: nowrap
+          width: 65%
+
+          @media screen and (max-width: $screen-xs-max)
+            font-size: 0.8rem
+
+        .label
+          color: $color-red-3
+          display: flex
+          font-size: 0.8rem
+          font-weight: bold
+          justify-content: flex-end
+          width: 45%
+
+          @media screen and (max-width: $screen-xs-max)
+            font-size: 0.6rem
+
+
+    .ticket-date
+      color: black
+      display: inline-block
+      padding: 1.3rem 0.6rem 1rem
+      text-align: center
+      vertical-align: middle
+      width: 33%
+
+      span
+        display: block
+
+        &.day
+          font-size: 1rem
+          margin: 0.3rem 0
+
+          @media screen and (max-width: $screen-xs-max)
+            margin: 0.1rem 0
+            font-size: 0.8rem
+
+        &.hour
+          font-size: 2rem
+
+          @media screen and (max-width: $screen-xs-max)
+            font-size: 1.4rem
+
+        &.status
+          font-size: 0.9rem
+          font-weight: bold
+
+          @media screen and (max-width: $screen-xs-max)
+            font-size: 0.7rem
+
+          &.appointment-booked
+            color: $color-red-1
+
+          &.appointment-canceled
+            color: $color-gray-2
+
+          &.appointment-finalized
+            color: $color-black
+
+.actions-overlay
+  align-items: center
+  background: rgba(0, 0, 0, 1)
+  border-radius: 9px
+  box-sizing: border-box
+  display: flex
+  flex-direction: column
+  height: 100%
+  justify-content: center
+  left: 0
+  padding: 1rem 2rem
+  position: absolute
+  top: 0
+  width: 100%
+
+  .action-button
+    border: 2px solid white
+    color: white
+    display: inline-block
+    cursor: pointer
+    font-size: 0.8rem
+    margin-bottom: 0.6rem
+    padding: 0.4rem
+    position: relative
+    text-align: center
+    transition: all 0.5s ease-in-out
+    width: 80%
+
+    &:hover
+      background: white
+      color: black
+
+    &:last-child
+      margin-bottom: 0
+
+    &.appointment-cancel
+
+      &:before
+        content: "\e04f"
+        font-family: 'ETmodules'
+        position: absolute
+        right: 12px
+
+    &.appointment-change
+
+      &:before
+        content: "\6a"
+        font-family: 'ETmodules'
+        position: absolute
+        right: 12px
+
+.icon-lock:before
+  content: "\e06c"
+  font-family: 'ETmodules'
+  font-size: inherit
+
+.main_title
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+  font-size: 1.875rem
+  font-weight: bold
+  margin: 0
+  text-align: center
+
+.no-items
+  background: $color-gray-4
+  border: 2px dashed $color-gray-2
+  border-radius: 8px
+  padding: 3rem 6rem
+  text-align: center
+  width: 100%
+
+  @media screen and (max-width: $screen-xs-max)
+    padding: 1rem
+
+  .title
+    color: $color-gray-2
+    font-size: 1.2rem
+    font-weight: bold
+    margin-bottom: 1rem
+
+    @media screen and (max-width: $screen-xs-max)
+      font-size: 1rem
+
+  .button
+    display: inline-block
+    margin: 0 auto
+
+    @media screen and (max-width: $screen-xs-max)
+
+
+.payment-options
+  display: flex
+  justify-content: space-around
+  list-style-type: none !important
+  margin: 0 !important
+  padding: 0 !important
+  width: 100%
+
+  li
+    max-width: 50px
+    width: 100%
+
+.required-message
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+  font-weight: bold
+  color: red
+
+
+.special-form
+  display: table
+  max-width: 440px
+  width: 100%
+
+  .action-link
+    cursor: pointer
+    display: inline-block
+    margin: 1rem auto
+    text-align: center
+    width: 100%
+
+  .title
+    background: $color-gray-4
+    border-radius: 12px 12px 0 0
+    color: $color-gray-2
+    font-size: 1rem
+    font-weight: bold
+    padding: 1rem
+
+  .info-row
+    display: table
+    border-collapse: separate
+    border-spacing: 1rem 0
+    padding: 0 0 1rem 0
+    width: 100%
+
+    &:last-child
+      padding: 0
+
+    .info-cell
+      display: table-cell
+      position: relative
+
+      &.full-width
+        width: 100%
+
+      &.third-width
+        width: 23%
+
+      &.tow-thirds-width
+        width: 77%
+
+
+    .info-label
+      color: $color-gray-2
+      font-size: 0.8rem
+      font-weight: bold
+
+    .info-brand
+      color: black
+      font-size: 2rem
+      vertical-align: bottom
+
+    input, select
+      color: black
+      border: 1px solid white
+      font-weight: normal
+      width: 100%
+
+  &.active
+    transition: all 0.5s ease-in-out
+
+    .title
+      background: black
+      color: $color-white
+
+    .info
+      border: 2px solid $color-gray-1
+      border-radius: 0 0 12px 12px
+      border-top: none
+      display: table
+      padding: 1rem 0
+      width: 100%
+
+    .button-red
+      margin: 0
+
+      &.disabled
+        background: $color-red-1
+        border: $color-red-1
+        color: black
+
+    input, select
+      border: 1px solid $color-gray-1
+      color: black
+
+      &:focus
+        box-shadow: 0px 0px 4px 0px rgba(26, 220, 255, 0.25)
+
+  .required-message
+    bottom: -18px
+    font-size: 8px
+    position: absolute
+    right: 1rem
+    top: 50%
+    transform: translateY(-50%)
+
+    span
+      vertical-align: text-top
+
+.icon-card
+  background-size: 100% auto !important
+  content: ""
+  display: inline-block
+  height: 60px
+  width: 60px
+
+.icon-cc-mastercard
+  background: url("../images/payment/mastercard.png") no-repeat right center
+
+.icon-cc-visa
+  background: url("../images/payment/visa.png") no-repeat right center
+
+.icon-cc-amex
+  background: url("../images/payment/amex.png") no-repeat right center
+
+
+/* Conekta blank gap fix
+ --------------------------------------------- */
+
+iframe[height='1']
+  position: absolute
+  z-index: -1
+
+.et_pb_section
+  @media (max-width: 980px)
+    padding: 20px 0
+
+/* Slicker styles */
+.slick-slider
+  margin-bottom: 0 !important
+
+.slick-prev, .slick-next
+  height: 50px !important
+  width: 50px !important
+  z-index: 100 !important
+
+  &:before
+    color: $color-gray-2 !important
+    font-size: 50px !important
+    height: 50px !important
+    width: 50px !important
+
+.slick-prev
+  left: 0px !important
+
+.slick-next
+  right: 0px !important

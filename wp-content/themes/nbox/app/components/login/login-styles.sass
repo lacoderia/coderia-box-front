@@ -1,0 +1,97 @@
+#overlay
+  background-color: rgba(0,0,0,0.5)
+  height: 100%
+  left: 0
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 100000
+
+#login-component
+  background-color: black
+  border: 7px solid black
+  border-radius: 25px
+  left: 50%
+  max-width: 350px
+  position: fixed
+  top: 50%
+  transform: translate(-50%, -50%)
+  width: 100%
+  z-index: 100001
+
+  &:before
+    background: url("../images/nbox-logo.png") no-repeat
+    background-size: 100% 100%
+    content: ""
+    height: 130px
+    left: 50%
+    position: fixed
+    top: 0
+    transform: translate(-50%, -35%)
+    width: 177px
+    z-index: 100002
+
+  .button-login
+    @extend .button-round
+    +button-bg($color-red-1, $color-red-1)
+    position: relative
+
+    &:after
+      font-family: 'ETmodules'
+      color: $color-red-1
+      content: "\35"
+      position: absolute
+      right: 1rem
+      opacity: 0
+      top: 50%
+      transform: translateY(-50%)
+      transition: ease 0.5s
+
+    &:hover
+      &:after
+        opacity: 1
+
+
+  .login-container, .forgot-container
+    padding: 6.8rem 2rem 2rem
+
+    p
+      color: #ffffff
+
+    form
+      width: 100%
+
+      input
+        margin-bottom: 1rem
+
+      button
+        margin: 0 0 2rem
+
+      a
+        color: $color-white
+        display: block
+
+        &:hover
+          color: $color-red-1
+
+      p
+        margin-bottom: 0.5rem
+
+  .section-title
+    color: white
+    font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+    font-size: 1.5rem
+
+  .error-message
+    color: $color-red-1
+    display: block
+    font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+    font-size: 0.8rem
+    line-height: 20px
+    margin-bottom: 1rem
+
+
+
+
+
+

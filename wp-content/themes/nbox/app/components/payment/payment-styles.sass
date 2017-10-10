@@ -1,0 +1,156 @@
+.payment-component
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+  margin: 0rem auto 6rem
+  max-width: 1024px
+  text-align: center
+  width: 100%
+
+  a
+    cursor: pointer
+    font-style: italic
+
+    &:first-child
+      margin-right: 0.4rem
+
+    &:last-child
+      margin-left: 0.4rem
+
+    &:hover
+      font-style: normal
+
+  .payment-wrapper
+    margin: 3rem 0
+    display: flex
+
+    @media screen and (max-width: $screen-xs-max)
+      display: block
+      padding: 0 2rem
+
+    .payment-section
+      width: 50%
+
+      @media screen and (max-width: $screen-xs-max)
+        width: 100%
+
+
+    .cart-section
+      width: 50%
+
+      @media screen and (max-width: $screen-xs-max)
+        width: 100%
+
+    h2, p
+      text-align: center
+
+    h3
+      margin-bottom: 1.5rem
+
+  .payment-options-label
+    margin: 2rem auto 0
+    max-width: 800px
+    width: 100%
+
+  form
+    margin: 0 auto
+    max-width: 800px
+    width: 100%
+
+    fieldset
+      >div
+        margin-bottom: 1.4rem
+        position: relative
+
+      label
+        display: block
+
+      button
+        max-width: 300px
+        width: 100%
+
+      &.coupon-form
+        border-collapse: separate
+        display: table
+
+        .input-cell
+          display: table-cell
+          padding-right: 16px
+          width: 90%
+
+        .button-cell
+          display: table-cell
+          text-align: right
+          width: 10%
+
+    .actions
+      text-align: center
+
+    .required-message
+      position: absolute
+      top: 50%
+      right: 16px
+
+  .card
+    margin-bottom: 1rem
+
+  .button-red
+    display: inline-block
+    max-width: 50%
+    transform: none
+
+  .border-container
+    padding: 0 2.5rem
+    position: relative
+    text-align: left
+    width: 100%
+
+    @media screen and (max-width: $screen-xs-max)
+      margin-bottom: 4rem
+
+    .button-red
+      margin-top: 0.6rem
+
+      &.disabled
+        background: $color-gray-4
+        border: $color-gray-4
+        color: $color-gray-2
+        cursor: default
+        font-style: normal
+
+      @media screen and (max-width: $screen-xs-max)
+        max-width: none
+        width: 100%
+
+    .cart-actions
+      a
+
+        &:first-child
+          margin-right: 0.4rem
+
+    .cart-item-name
+      border-bottom: 1px solid $color-gray-1
+      color: black
+      margin-bottom: 1.5rem
+      padding: 0.6rem 0
+      font-weight: bold
+      font-size: 1.3rem
+
+    .cart-subsection
+      margin-bottom: 0.8rem
+
+      form
+        width: 100%
+
+        fieldset
+          margin-bottom: 1rem
+          position: relative
+
+        .action-button
+          background: transparent
+          width: 100%
+
+    .cart-total
+      color: $color-gray-3
+      font-size: 1rem
+      font-weight: bold
+
+

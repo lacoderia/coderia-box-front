@@ -1,0 +1,68 @@
+.booking-component
+  box-sizing: border-box
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+  font-size: 1.2em
+  font-weight: bold
+  margin: 6rem auto
+  max-width: 600px
+  min-height: 130px
+  padding: 2rem 4rem
+  text-align: center
+  width: 100%
+
+  @media screen and (max-width: $screen-xs-max)
+    margin: 1rem auto
+    padding: 0.5rem 2rem
+
+  button
+    margin: 0.5rem 0 0
+    max-width: 300px
+
+  h3
+    margin: 2.5rem 0 0
+    padding: 0
+
+  .booking-info
+    div
+      display: table
+      margin: 1rem 0 0.8rem
+      width: 100%
+
+      @media screen and (max-width: $screen-xs-max)
+        display: block
+
+    &:last-child
+      margin-right: 0
+
+  .booking-date, .booking-station, .booking-instructor
+    display: table-cell
+    font-size: 1em
+    font-weight: normal
+    text-align: right
+    width: 50%
+
+    @media screen and (max-width: $screen-xs-max)
+      display: block
+      text-align: center
+      width: 100%
+
+  .booking-label
+    box-sizing: border-box
+    display: table-cell
+    padding-left: 6px
+    text-align: left
+    width: 50%
+
+    @media screen and (max-width: $screen-xs-max)
+      display: block
+      text-align: center
+      width: 100%
+
+  .required-message
+    margin: 0.5rem 0 0
+    min-height: 23px
+    display: block
+
+  .current-seat
+    font-weight: normal
+    text-decoration: line-through

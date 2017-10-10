@@ -1,0 +1,226 @@
+.pack-component
+  padding: 0
+  margin: 4rem auto 6rem
+  max-width: 1024px
+  width: 100%
+
+  @media screen and (max-width: $screen-md-max)
+    margin: 4rem auto 2rem
+
+  h2, p
+    text-align: center
+
+  ul
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    list-style: none !important
+    margin: 3rem 0
+    padding: 0
+    width: 100%
+
+    @media screen and (max-width: $screen-xs-max)
+      justify-content: center
+      margin: 1rem 0
+
+    li
+      background-color: $color-black
+      border-radius: 60px 10px 60px 60px
+      font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+      min-height: 190px
+      min-width: 190px
+      padding: 0
+      transform: skewX(-10deg)
+      transition: ease 0.5s
+
+      @media screen and (max-width: $screen-md-max)
+        margin: 0  1rem 2rem
+
+      &.special
+        background-color: $color-red-3
+
+        a
+          span
+            &.pack-price, &.pack-expiration
+              color: $color-black !important
+
+            &.pack-expiration
+              bottom: 12px
+
+            &.tooltip
+              background: $color-red-3
+              border-radius: 5px
+              bottom: -35px
+              color: $color-white
+              display: inline-block
+              font-size: 0.7rem
+              opacity: 0
+              padding: 0.5rem
+              position: absolute
+              left: 50%
+              transform: translateX(-50%)
+              white-space: pre
+              z-index: 1000
+
+              &:before
+                content: ""
+                border-left: 5px solid transparent
+                border-right: 5px solid transparent
+                border-bottom: 5px solid $color-red-3
+                position: absolute
+                height: 0
+                left: 50%
+                top: -5px
+                transform: translateX(-50%)
+                width: 0
+
+          icon
+            &.special-icon
+              background: transparent
+              display: block
+              height: 54px
+              position: relative
+
+              &:before
+                content: "\e073"
+                color: $color-white
+                font-family: 'ETmodules'
+                font-size: 2.2rem
+                left: 50%
+                position: absolute
+                transform: translate(-50%, -50%)
+                text-align: center
+                top: 50%
+
+          &:hover
+            span
+              &.pack-price, &.pack-expiration
+                color: $color-red-3 !important
+
+              &.tooltip
+                opacity: 1
+
+            icon
+              &.special-icon
+                &:before
+                  color: $color-red-2
+
+      &:last-child
+        margin-right: 0
+
+      &.selected
+        background-color: $color-red-1
+
+        .pack-name, .pack-description
+          color: $color-black !important
+
+        .pack-price, .pack-expiration
+          color: $color-red-2 !important
+
+      a
+        cursor: pointer
+        display: block
+        margin: 0
+        padding: 1.8rem 1.4rem
+        position: relative
+        width: 100%
+
+        span
+          align-content: center
+          display: flex
+          justify-content: center
+          line-height: normal
+
+          &.pack-name
+            color: $color-white !important
+            font-size: 3rem
+            font-weight: bold
+            line-height: 56px
+
+          &.pack-description
+            color: $color-white !important
+            font-weight: bold
+            font-size: 1.4rem
+            line-height: 30px
+
+          &.pack-price
+            color: $color-red-3 !important
+            font-weight: bold
+            font-size: 1rem
+
+          &.pack-promo-price
+            color: $color-white !important
+            font-weight: bold
+            font-size: 1rem
+            position: relative
+
+            &:before
+              background: $color-white
+              content: ''
+              height: 2px
+              left: 50%
+              position: absolute
+              transform: translate(-50%, -50%)
+              top: 50%
+              width: 80px
+
+
+          &.pack-expiration
+            bottom: -8px
+            color: $color-red-3 !important
+            font-weight: bold
+            font-size: 0.7rem
+            left: 0
+            position: absolute
+            text-align: center
+            width: 100%
+
+          &.pack-button-more
+            align-content: center
+            border: 5px solid $color-white
+            border-radius: 50% 10px 50% 50%
+            color: $color-white
+            display: flex
+            font-size: 2rem
+            height: 56px
+            justify-content: center
+            position: absolute
+            right: 0
+            top: 0
+            width: 56px
+
+
+      &:hover
+        background-color: $color-black
+        transform: skewX(0deg)
+
+        a
+          span
+            &.pack-name
+              color: $color-red-2 !important
+
+            &.pack-description
+              color: $color-red-2 !important
+
+            &.pack-button-more
+              border: 5px solid $color-red-2
+              color: $color-red-2
+
+  .actions
+    text-align: center
+
+    .close-link
+      color: $color-red-1
+      font-weight: bold
+      display: inline-block
+      font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+      margin: 1rem auto 2rem
+
+      &:hover
+        color: $color-red-3
+
+  .button-red
+    display: block
+    margin: 1rem auto 0
+    max-width: 300px
+    transform: skewX(-10deg)

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,iBAAiB;EACf,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,MAAM;EACd,UAAU,EAAE,IAAI;EAChB,UAAU,EAAE,MAAM;EAElB,mBAAC;IACC,WAAW,EAAE,IAAI;;AAErB,eAAe;EACb,gBAAgB,EAAE,OAAgB;;AAEpC,YAAY;EACV,gBAAgB,EAAE,OAAgB",
+"sources": ["social-styles.sass"],
+"names": [],
+"file": "social-styles.css"
+}

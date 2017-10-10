@@ -1,0 +1,15 @@
+.social-container {
+  color: #fff;
+  margin: 0 auto;
+  margin-top: 30px;
+  text-align: center; }
+  .social-container a {
+    margin-left: 10px; }
+
+.a2a_s_facebook {
+  background-color: #3b5998; }
+
+.a2a_s_email {
+  background-color: #0166ff; }
+
+/*# sourceMappingURL=social-styles.css.map */

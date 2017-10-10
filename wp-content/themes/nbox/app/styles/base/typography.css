@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'brush';
+  src: url('../../../fonts/americanauthors.eot') format('embedded-opentype'),
+  url('../../../fonts/americanauthors.ttf') format('truetype'),
+  url('../../../fonts/americanauthors.woff') format('woff'),
+  url('../../../fonts/americanauthors.svg#brushed-traveler') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,72 @@
+.instructors-component
+  margin: 10rem auto 0
+  width: 100%
+
+  h2
+    margin: 2.5rem 0
+    text-align: center
+    width: 100%
+
+  .instructor
+    background-position: bottom !important
+    background-size: auto 100% !important
+    box-sizing: border-box
+    cursor: pointer
+    font-size: 1.5rem
+    font-weight: bold
+    min-height: 550px
+    opacity: 0.6
+    transition: opacity 0.4s ease-out
+
+    &:hover
+      opacity: 1
+
+      span
+        display: block
+        text-align: center
+
+        &.instructors-quote
+          opacity: 1
+
+        &.instructors-name
+          opacity: 1
+
+    span
+      display: block
+      text-align: center
+      transition: opacity 0.4s ease-out
+
+      &.instructors-name
+        background: black
+        border-radius: 12px
+        color: $color-red-1
+        margin: 280px auto auto
+        padding: 0.6rem 0.6rem
+        width: 80%
+        opacity: 0
+
+      &.instructors-quote
+        color: black
+        background: url("../images/quotes.svg") no-repeat left top
+        background-size: 30% auto
+        font-family: 'brush'
+        font-size: 1.6rem
+        font-weight: bold
+        line-height: 2.2rem
+        margin: 0 auto
+        padding: 1rem 0.4rem
+        min-height: 180px
+        opacity: 0
+        text-align: center
+        width: 90%
+
+        @media screen and (max-width: $screen-xs-max)
+          background-size: 20% auto
+          font-size: 2.2rem
+
+  .mobile-slick
+    .instructor
+      opacity: 1
+
+      span
+        opacity: 1

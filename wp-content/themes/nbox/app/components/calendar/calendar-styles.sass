@@ -1,0 +1,269 @@
+.calendar-component
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+  max-width: 1024px
+  margin: 4rem auto 6rem
+  width: 100%
+
+  @media screen and (max-width: $screen-xs-max)
+    margin: 1rem auto
+    padding: 0.8rem
+
+  h2, p
+    text-align: center
+
+  .calendar
+    margin: 3rem 0
+
+    @media screen and (max-width: $screen-xs-max)
+      margin: 1.5rem 0
+
+    .calendar-filters
+      display: table
+      padding: 0 0.4rem
+      width: 100%
+
+      .week-label
+        display: table-cell
+        font-size: 1.2rem
+        width: 50%
+
+        @media screen and (max-width: $screen-xs-max)
+          display: block
+          font-size: 1.2rem
+          margin-bottom: 0.6rem
+          text-align: center
+          width: 100%
+
+      .week-filters
+        display: table-cell
+        text-align: right
+        width: 50%
+
+        @media screen and (max-width: $screen-xs-max)
+          display: block
+          text-align: center
+          width: 100%
+
+        select
+          margin-left: 0.4rem
+          width: 150px
+
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+
+    >ul
+      display: table
+      table-layout: fixed
+      width: 100%
+
+      li
+        display: flex
+        flex-direction: column
+        justify-content: center
+        min-height: 140px
+        padding: 1rem 0rem
+        text-align: center
+
+        @media screen and (max-width: $screen-xs-max)
+          min-height: auto
+          padding: 0.4rem 0.2rem
+
+      .class
+        border: 1px solid $color-gray-1
+        cursor: pointer
+        margin: 1px
+        overflow: hidden
+        padding: 1rem 0
+        position: relative
+        transition: ease 0.5s
+
+        @media screen and (max-width: $screen-xs-max)
+          line-height: 14px
+          margin-bottom: 0.3rem
+          padding: 0.7rem 0
+
+        &.disabled
+          background: $color-gray-4
+          +striped-bg(#CCC, 4%)
+          cursor: default
+          opacity: 0.4
+
+          .class-time, .class-instructor
+            color: $color-gray-3
+
+        &.selectable
+          cursor: pointer !important
+
+        &.enabled
+          box-shadow: 0px 0px 4px 0px rgba(134, 135, 136, 0.1)
+          color: black
+
+          &:hover
+            background: black
+
+            .class-time, .class-description
+              color: $color-white
+              transition: ease 0.5s
+
+          &.special
+            border: 2px solid $color-red-1
+
+            &:hover
+              background: $color-red-1
+
+              .class-instructor
+                color: black
+
+        .class-description
+          color: $color-black
+          display: block
+          overflow: hidden
+          font-size: 0.7rem
+          font-weight: bold
+          line-height: 10px
+          margin: 0rem 0 0.4rem
+
+          @media screen and (max-width: $screen-xs-max)
+            text-align: center
+            width: 100%
+
+        .class-dj
+          display: block
+          overflow: hidden
+          font-size: 0.7rem
+          font-weight: bold
+          line-height: 10px
+          margin: 0rem 0 0.4rem
+
+          @media screen and (max-width: $screen-xs-max)
+            text-align: center
+            width: 100%
+
+          span
+            background-color: $color-red-1
+            border-radius: 3px
+            color: $color-white
+            display: inline-block
+            padding: 4px 6px 3px 6px
+
+        .class-instructor
+          display: block
+          color: $color-red-1
+          font-size: 0.9rem
+          font-weight: bold
+          margin: 0.4rem 0 0rem
+
+          @media screen and (max-width: $screen-xs-max)
+            font-size: 0.8rem
+            margin: 0
+
+        .class-time
+          display: block
+          color: black
+          font-size: 1.5rem
+          margin: 0rem 0 0.4rem
+
+          @media screen and (max-width: $screen-xs-max)
+            font-size: 0.8rem
+            margin: 0
+
+        .ribbon
+          position: absolute
+          right: -10px
+          top: -10px
+          z-index: 1
+          overflow: hidden
+          width: 75px
+          height: 75px
+          text-align: right
+
+          span
+            font-size: 10px
+            font-weight: bold
+            color: #000
+            text-transform: uppercase
+            text-align: center
+            line-height: 15px
+            transform: rotate(45deg)
+            -webkit-transform: rotate(45deg)
+            width: 100px
+            display: block
+            background: $color-yellow-1
+            background: linear-gradient($color-yellow-1 0%, $color-yellow-1 100%)
+            box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1)
+            padding-top: 3px
+            position: absolute
+            top: 19px
+            right: -21px
+
+          span::before
+            content: ""
+            position: absolute
+            left: 0px
+            top: 100%
+            z-index: -1
+            border-left: 3px solid $color-yellow-1
+            border-right: 3px solid transparent
+            border-bottom: 3px solid transparent
+            border-top: 3px solid $color-yellow-1
+
+          span::after
+            content: ""
+            position: absolute
+            right: 0px
+            top: 100%
+            z-index: -1
+            border-left: 3px solid transparent
+            border-right: 3px solid $color-yellow-1
+            border-bottom: 3px solid transparent
+            border-top: 3px solid $color-yellow-1
+
+      .day
+        display: table-cell
+
+        @media screen and (max-width: $screen-xs-max)
+          margin-bottom: 0.2rem
+          cursor: pointer
+
+          &.selected
+            position: relative
+
+            &:after
+              background: $color-red-1
+              border-radius: 50%
+              content: ""
+              position: absolute
+              height: 10px
+              left: 50%
+              top: 50%
+              width: 10px
+              transform: translate(-46%, 80%)
+
+
+        .day-title
+          color: black
+          display: inline-block
+          margin-bottom: 0.8rem
+          padding: 0.4rem 0
+          width: 100%
+
+          @media screen and (max-width: $screen-xs-max)
+            margin-bottom: 0.2rem
+
+          .day-label
+            display: block
+            font-size: 1rem
+
+            @media screen and (max-width: $screen-xs-max)
+              display: none
+
+          .day-number
+            display: block
+            font-size: 2.3rem
+
+            @media screen and (max-width: $screen-xs-max)
+              font-size: 1rem
+
+

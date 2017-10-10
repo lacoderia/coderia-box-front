@@ -1,0 +1,73 @@
+#top-menu .menu-item
+  color: rgba(255,255,255,0.9)
+  cursor: pointer
+
+#top-menu .menu-item a
+  text-transform: uppercase
+
+.menu-user
+  position: relative
+
+  &:before
+    font-family: 'ETmodules'
+    content: "\e08a"
+    color: rgba(255,255,255,0.9)
+
+  &:hover
+    opacity: 1 !important
+
+    .tooltip
+      opacity: 1
+
+      @media screen and (max-width: $screen-xs-max)
+        opacity: 0
+
+
+  .menu-user-text
+    display: none
+
+    @media screen and (max-width: $screen-xs-max)
+      display: inline
+      margin-left: 20px
+
+  .menu-credits
+    color: rgba(255,255,255,0.9)
+    font-size: 0.6rem
+    position: absolute
+    left: 14px
+    top: -10px
+
+    @media screen and (max-width: $screen-xs-max)
+      left: 25px
+      top: 0px
+
+  .tooltip
+    background: $color-red-1
+    border-radius: 5px
+    color: $color-white
+    cursor: auto
+    display: inline-block
+    font-size: 0.6rem
+    opacity: 0
+    padding: 0.5rem
+    position: absolute
+    left: 50%
+    top: 30px
+    transform: translateX(-50%)
+    white-space: pre
+
+    &:before
+      content: ""
+      border-left: 5px solid transparent
+      border-right: 5px solid transparent
+      border-bottom: 5px solid $color-red-1
+      position: absolute
+      height: 0
+      left: 50%
+      top: -5px
+      transform: translateX(-50%)
+      width: 0
+
+
+
+
