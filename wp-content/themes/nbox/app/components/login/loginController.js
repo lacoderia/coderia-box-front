@@ -68,6 +68,7 @@ nbox.controller('LoginController', ['$rootScope', '$scope', '$timeout', 'Session
 
     loginCtrl.hideModal = function(){
         showModal = false;
+        stopBodyScrolling(false);
         callbackBroadcastName = undefined;
     };
 
@@ -81,6 +82,8 @@ nbox.controller('LoginController', ['$rootScope', '$scope', '$timeout', 'Session
         resetViewForm(view);
         currentView = view;
         showModal = true;
+
+        stopBodyScrolling(true);
     };
 
     // Function to reset forms
@@ -236,6 +239,20 @@ nbox.controller('LoginController', ['$rootScope', '$scope', '$timeout', 'Session
                     }
                     usSpinnerService.stop('login-spinner');
                 });
+        }
+    };
+
+    var stopBodyScrolling = function(bool) {
+        var htmlElement = document.querySelector('html');
+        var bodyElement = document.querySelector('body');
+        var angularHtmlElement = angular.element(htmlElement);
+        var angularBodyElement = angular.element(bodyElement);
+        if (bool === true) {
+            angularHtmlElement.addClass('visible-modal');
+            angularBodyElement.addClass('visible-modal');
+        } else {
+            angularHtmlElement.removeClass('visible-modal');
+            angularBodyElement.removeClass('visible-modal');
         }
     };
 

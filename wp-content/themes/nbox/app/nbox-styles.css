@@ -171,6 +171,11 @@
   width: 100%;
   z-index: 100000; }
 
+@media screen and (max-width: 768px) {
+  .visible-modal, body.visible-modal > div.wrapper {
+    height: 100vh !important;
+    overflow: hidden !important; } }
+
 #login-component {
   background-color: black;
   border: 7px solid black;
@@ -182,6 +187,9 @@
   transform: translate(-50%, -50%);
   width: 100%;
   z-index: 100001; }
+  @media screen and (max-width: 768px) {
+    #login-component {
+      position: absolute; } }
   #login-component:before {
     background: url("../images/nbox-logo.png") no-repeat;
     background-size: 100% 100%;

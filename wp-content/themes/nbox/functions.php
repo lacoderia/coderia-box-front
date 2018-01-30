@@ -2,7 +2,7 @@
 
 define('child_template_directory', dirname( get_bloginfo('stylesheet_url')) );
 
-define ('VERSION', '1.1.2');
+define ('VERSION', '1.1.2.3');
 
 function version_id() {
   if ( WP_DEBUG )
@@ -26,8 +26,8 @@ function nbox_google_fonts() {
     wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Nunito:400,300,700&subset=latin', array() );
 }
 
-//$api_url_base = 'https://198.61.202.55:8082';
-$api_url_base = 'https://servicios.coderia.mx';
+$api_url_base = 'https://198.61.202.55:8082';
+//$api_url_base = 'https://servicios.coderia.mx';
 $api_args = array('sslverify' => false);
 
 function get_instructors() {
