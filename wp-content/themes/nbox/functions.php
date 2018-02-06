@@ -2,7 +2,7 @@
 
 define('child_template_directory', dirname( get_bloginfo('stylesheet_url')) );
 
-define ('VERSION', '1.1.2.3');
+define ('VERSION', '1.1.3');
 
 function version_id() {
   if ( WP_DEBUG )
@@ -26,8 +26,8 @@ function nbox_google_fonts() {
     wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Nunito:400,300,700&subset=latin', array() );
 }
 
-$api_url_base = 'https://198.61.202.55:8082';
-//$api_url_base = 'https://servicios.coderia.mx';
+$api_url_base = 'http://servicios.coderia.mx:8082';
+//$api_url_base = 'https://servicios.n-box.com.mx';
 $api_args = array('sslverify' => false);
 
 function get_instructors() {
@@ -37,7 +37,7 @@ function get_instructors() {
     $url = $api_url_base.'/instructors';
     $request = new WP_Http;
     $result = $request->get( $url, $api_args );
-    if( wp_remote_retrieve_response_code($result) == '200' ){
+    if( wp_remote_retrieve_response_code($result) == '200' || wp_remote_retrieve_response_code($result) == '304' ){
         $json = json_decode( $result['body'], true );
         if( isset($json['instructors']) ){
             $data['instructors'] = $json['instructors'];
@@ -54,7 +54,7 @@ function get_schedule_types() {
     $url = $api_url_base.'/schedule_types';
     $request = new WP_Http;
     $result = $request->get( $url, $api_args );
-    if( wp_remote_retrieve_response_code($result) == '200' ){
+    if( wp_remote_retrieve_response_code($result) == '200' || wp_remote_retrieve_response_code($result) == '304' ){
         $json = json_decode( $result['body'], true );
         if( isset($json['schedule_types']) ){
             $data['schedule_types'] = $json['schedule_types'];
@@ -71,7 +71,7 @@ function get_packs() {
     $url = $api_url_base.'/packs';
     $request = new WP_Http;
     $result = $request->get( $url, $api_args);
-    if( wp_remote_retrieve_response_code($result) == '200' ){
+    if( wp_remote_retrieve_response_code($result) == '200' || wp_remote_retrieve_response_code($result) == '304' ){
         $json = json_decode( $result['body'], true );
         if( isset($json['packs']) ){
             $data['packs'] = $json['packs'];
@@ -82,12 +82,12 @@ function get_packs() {
 
 function get_weekly_schedule() {
     global $api_url_base, $api_args;
-    $data['schedules'] = array();
+    $data['weekly_schedule'] = array();
 
     $url = $api_url_base.'/schedules/weekly_scope';
     $request = new WP_Http;
     $result = $request->get( $url, $api_args );
-    if( wp_remote_retrieve_response_code($result) == '200' ){
+    if( wp_remote_retrieve_response_code($result) == '200' || wp_remote_retrieve_response_code($result) == '304' ){
         $json = json_decode( $result['body'], true );
         if( isset($json['schedules']) ){
             $data['weekly_schedule'] = $json;
@@ -105,7 +105,7 @@ function get_instructor_profile() {
     $url = $api_url_base.'/instructors/' . $instructor_id;
     $request = new WP_Http;
     $result = $request->get( $url, $api_args );
-    if( wp_remote_retrieve_response_code($result) == '200' ){
+    if( wp_remote_retrieve_response_code($result) == '200' || wp_remote_retrieve_response_code($result) == '304' ){
         $json = json_decode( $result['body'], true );
         if( isset($json['instructor']) ){
             $data['instructor'] = $json['instructor'];
@@ -122,7 +122,7 @@ function get_cards() {
     $request = new WP_Http;
 
     $result = $request->get( $url, array('headers' => get_nbx_headers(), 'sslverify' => false) );
-    if( wp_remote_retrieve_response_code($result) == '200' ){
+    if( wp_remote_retrieve_response_code($result) == '200' || wp_remote_retrieve_response_code($result) == '304' ){
         $json = json_decode( $result['body'], true );
         if( isset($json['cards']) ){
             $data['cards'] = $json['cards'];
@@ -139,7 +139,7 @@ function get_primary_card() {
     $request = new WP_Http;
 
     $result = $request->get( $url, array('headers' => get_nbx_headers(), 'sslverify' => false) );
-    if( wp_remote_retrieve_response_code($result) == '200' ){
+    if( wp_remote_retrieve_response_code($result) == '200' || wp_remote_retrieve_response_code($result) == '304' ){
         $json = json_decode( $result['body'], true );
         if( isset($json['card']) ){
             $data['card'] = $json['card'];
@@ -156,7 +156,7 @@ function get_future_appointments() {
     $request = new WP_Http;
 
     $result = $request->get( $url, array('headers' => get_nbx_headers(), 'sslverify' => false) );
-    if( wp_remote_retrieve_response_code($result) == '200' ){
+    if( wp_remote_retrieve_response_code($result) == '200' || wp_remote_retrieve_response_code($result) == '304' ){
         $json = json_decode( $result['body'], true );
         if( isset($json['appointments']) ){
             $data['appointments'] = $json['appointments'];
@@ -174,7 +174,7 @@ function get_appointments_history() {
     $request = new WP_Http;
 
     $result = $request->get( $url, array('headers' => get_nbx_headers(), 'sslverify' => false) );
-    if( wp_remote_retrieve_response_code($result) == '200' ){
+    if( wp_remote_retrieve_response_code($result) == '200' || wp_remote_retrieve_response_code($result) == '304' ){
         $json = json_decode( $result['body'], true );
         if( isset($json['appointments']) ){
             $data['appointments'] = $json['appointments'];

@@ -83,7 +83,7 @@ nbox.factory('CalendarService', ['$rootScope', 'LoggerService', 'DEFAULT_VALUES'
                     instructor.setName(item.instructor.first_name);
                 }
 
-                var boxClass = new BoxClass(item.id, instructor.getId(), instructor.getName(), item.room.id, item.datetime, item.available_seats, item.description, item.free, item.opening, new ScheduleType(item.schedule_type.id, item.schedule_type.description));
+                var boxClass = new BoxClass(item.id, instructor.getId(), instructor.getName(), item.room.id, item.datetime, item.available_seats, item.description, item.free, item.opening, new ScheduleType(item.schedule_type.id, item.schedule_type.description), (item.alternate_instructor ? item.alternate_instructor.first_name : '') );
                 list.push(boxClass);
             }
         } catch(error){

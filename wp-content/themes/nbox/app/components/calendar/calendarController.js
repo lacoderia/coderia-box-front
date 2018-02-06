@@ -27,6 +27,12 @@ nbox.controller('CalendarController', ['$scope', '$document', '$timeout', 'Calen
      */
     var selectedDay = undefined;
 
+    /**
+     *
+     * @type {BoxClass}
+     */
+    var boxClassInfo = undefined;
+
     // Scope variables
 
     /**
@@ -193,6 +199,22 @@ nbox.controller('CalendarController', ['$scope', '$document', '$timeout', 'Calen
             }, 500);
             usSpinnerService.spin('full-spinner');
         }
+    };
+
+    /**
+     *
+     * @param boxClass
+     */
+    calendarCtrl.showBoxClassInfo = function(boxClass) {
+        boxClassInfo = boxClass;
+    };
+
+    /**
+     *
+     * @param boxClass
+     */
+    calendarCtrl.isBoxClassInfoShown = function(boxClass) {
+        return boxClassInfo == boxClass;
     };
 
     /**

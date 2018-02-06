@@ -30,13 +30,20 @@
                     <span class="day-title"> {{ ::instructorProfileCtrl.getDayOfWeek(day.getDate().day()) }}</span>
                 </div>
                 <ul>
-                    <li ng-repeat="boxClass in day.getBoxClasses() | orderByDate" class="class" ng-class="{ 'enabled': instructorProfileCtrl.isClassEnabled(boxClass), 'disabled': !instructorProfileCtrl.isClassEnabled(boxClass), 'selectable': instructorProfileCtrl.isClassSelectable(boxClass), 'warning': boxClass.getAvailableSeats() <= 10, 'special': boxClass.getDescription() }" ng-click="instructorProfileCtrl.selectBoxClass(boxClass)">
-                        <div class="ribbon" ng-if="::boxClass.getIsFree()"><span>GRATIS</span></div>
-                        <div class="ribbon" ng-if="::boxClass.getIsOpening()"><span>APERTURA</span></div>
-                        <span class="class-time">{{ ::boxClass.getDate().format('H:mm')}}</span>
-                        <span class="class-description" ng-if="instructorProfileCtrl.isClassEnabled(boxClass)">{{ ::boxClass.getScheduleType().getDescription() }}</span>
-                        <span class="class-dj" ng-if="instructorProfileCtrl.isClassEnabled(boxClass) && boxClass.getDescription()"><span>{{ ::boxClass.getDescription() }}</span></span>
-                        <span class="class-title">{{ ::boxClass.getAvailableSeatsMessage(true) }}</span>
+                    <li ng-repeat="boxClass in day.getBoxClasses() | orderByDate" class="class" ng-class="{ 'enabled': instructorProfileCtrl.isClassEnabled(boxClass), 'disabled': !instructorProfileCtrl.isClassEnabled(boxClass), 'selectable': instructorProfileCtrl.isClassSelectable(boxClass), 'warning': boxClass.getAvailableSeats() <= 10, 'special': boxClass.getDescription() }">
+                        <div ng-click="instructorProfileCtrl.selectBoxClass(boxClass)">
+                            <div class="ribbon" ng-if="::boxClass.getIsFree()"><span>GRATIS</span></div>
+                            <div class="ribbon" ng-if="::boxClass.getIsOpening()"><span>APERTURA</span></div>
+                            <span class="class-time">{{ ::boxClass.getDate().format('H:mm')}}</span>
+                            <span class="class-description" ng-if="instructorProfileCtrl.isClassEnabled(boxClass)">{{ ::boxClass.getScheduleType().getDescription() }}</span>
+                            <span class="class-dj" ng-if="instructorProfileCtrl.isClassEnabled(boxClass) && boxClass.getDescription()"><span>{{ ::boxClass.getDescription() }}</span></span>
+                            <span class="class-title">{{ ::boxClass.getAvailableSeatsMessage(true) }}</span>
+                        </div>
+                        <div class="info-overlay animate-visibility" ng-show="instructorProfileCtrl.isBoxClassInfoShown(boxClass)">
+                            <span class="class-alternate" ng-if="::boxClass.getAlternateInstructor()">suple a {{ ::boxClass.getAlternateInstructor() }}</span>
+                            <icon class="icon-close animate-visibility" title="Cerrar" ng-click="instructorProfileCtrl.showBoxClassInfo(undefined)"></icon>
+                        </div>
+                        <icon class="icon-info animate-visibility" title="Info" ng-if="::boxClass.getAlternateInstructor()" ng-click="instructorProfileCtrl.showBoxClassInfo(boxClass)" ng-show="!instructorProfileCtrl.isBoxClassInfoShown(boxClass)"></icon>
                     </li>
                 </ul>
             </li>

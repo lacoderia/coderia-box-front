@@ -38,7 +38,7 @@ nbox.factory('HistoryService', ['$http', '$q', '$rootScope', 'LoggerService', 'A
             for (var i=0; i<appointments.length; i++) {
                 var item = appointments[i];
                 var schedule = item.schedule;
-                var appointment = new Appointment(item.id, schedule.instructor.first_name, item.status, item.station_number, item.start, new BoxClass(schedule.id, schedule.instructor.id, schedule.instructor.first_name, schedule.room_id, schedule.datetime, undefined, undefined, undefined, undefined, new ScheduleType(schedule.schedule_type.id, schedule.schedule_type.description)));
+                var appointment = new Appointment(item.id, schedule.instructor.first_name, item.status, item.station_number, item.start, new BoxClass(schedule.id, schedule.instructor.id, schedule.instructor.first_name, schedule.room_id, schedule.datetime, undefined, undefined, undefined, undefined, new ScheduleType(schedule.schedule_type.id, schedule.schedule_type.description), (schedule.alternate_instructor ? schedule.alternate_instructor.first_name : '') ));
                 list.push(appointment);
             }
 

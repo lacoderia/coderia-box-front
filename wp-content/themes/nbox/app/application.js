@@ -22,8 +22,8 @@ nbox.config(['localStorageServiceProvider', function(localStorageServiceProvider
 }]);
 
 nbox.constant('ENVIRONMENT', ENVIRONMENT);
-nbox.constant('API_URL_BASE', 'https://servicios.coderia.mx');
-//nbox.constant('API_URL_BASE', 'https://198.61.202.55:8082');
+nbox.constant('API_URL_BASE', 'http://servicios.coderia.mx:8082');
+//nbox.constant('API_URL_BASE', 'https://servicios.n-box.com.mx');
 
 nbox.constant('DEFAULT_VALUES', {
     'DAYS_OF_WEEK': ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],

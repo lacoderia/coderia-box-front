@@ -530,10 +530,14 @@
           box-shadow: 0px 0px 4px 0px rgba(134, 135, 136, 0.1);
           color: black; }
           .calendar-component .calendar > ul .class.enabled:hover {
-            background: black; }
+            background: #000; }
             .calendar-component .calendar > ul .class.enabled:hover .class-time, .calendar-component .calendar > ul .class.enabled:hover .class-description {
               color: #fff;
               transition: ease 0.5s; }
+            .calendar-component .calendar > ul .class.enabled:hover icon {
+              color: #fff; }
+              .calendar-component .calendar > ul .class.enabled:hover icon.icon-info {
+                border: 2px solid #fff; }
           .calendar-component .calendar > ul .class.enabled.special {
             border: 2px solid #C13235; }
             .calendar-component .calendar > ul .class.enabled.special:hover {
@@ -635,6 +639,49 @@
             border-right: 3px solid #e3da19;
             border-bottom: 3px solid transparent;
             border-top: 3px solid #e3da19; }
+        .calendar-component .calendar > ul .class .class-alternate {
+          color: #fff;
+          display: block;
+          font-size: 0.8rem;
+          font-weight: bold;
+          line-height: 1rem;
+          margin: 0rem; }
+        .calendar-component .calendar > ul .class icon {
+          cursor: pointer;
+          font-size: 1rem;
+          font-weight: bold;
+          top: 8px;
+          left: 8px;
+          position: absolute; }
+          .calendar-component .calendar > ul .class icon.icon-close {
+            color: #fff; }
+            .calendar-component .calendar > ul .class icon.icon-close:before {
+              content: "Q";
+              font-family: "ETmodules"; }
+          .calendar-component .calendar > ul .class icon.icon-info {
+            border: 2px solid #000;
+            border-radius: 9px;
+            color: black;
+            height: 18px;
+            width: 18px; }
+            .calendar-component .calendar > ul .class icon.icon-info:before {
+              content: "s";
+              display: block;
+              font-family: Nunito, Helvetica, Arial, Lucida, sans-serif !important;
+              line-height: 12px; }
+        .calendar-component .calendar > ul .class .info-overlay {
+          align-items: center;
+          background: black;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          justify-content: center;
+          left: 0;
+          padding: 1rem 2rem;
+          position: absolute;
+          top: 0;
+          width: 100%; }
       .calendar-component .calendar > ul .day {
         display: table-cell; }
         @media screen and (max-width: 768px) {
@@ -1079,6 +1126,7 @@
       opacity: 1; }
 
 .instructors-profile-component {
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif;
   margin: 1rem auto 0;
   width: 100%; }
   .instructors-profile-component instructor {
@@ -1185,6 +1233,10 @@
               color: #fff; }
               .instructors-profile-component .calendar > ul > li ul li.class.enabled:hover .class-title {
                 color: #fff; }
+              .instructors-profile-component .calendar > ul > li ul li.class.enabled:hover icon {
+                color: #fff; }
+                .instructors-profile-component .calendar > ul > li ul li.class.enabled:hover icon.icon-info {
+                  border: 2px solid #fff; }
             .instructors-profile-component .calendar > ul > li ul li.class.enabled.special {
               border: 2px solid #C13235; }
               .instructors-profile-component .calendar > ul > li ul li.class.enabled.special:hover {
@@ -1269,6 +1321,49 @@
                 border-right: 3px solid #e3da19;
                 border-bottom: 3px solid transparent;
                 border-top: 3px solid #e3da19; }
+            .instructors-profile-component .calendar > ul > li ul li.class .class-alternate {
+              color: #fff;
+              display: block;
+              font-size: 0.8rem;
+              font-weight: bold;
+              line-height: 1rem;
+              margin: 0rem; }
+            .instructors-profile-component .calendar > ul > li ul li.class icon {
+              cursor: pointer;
+              font-size: 1rem;
+              font-weight: bold;
+              top: 8px;
+              left: 8px;
+              position: absolute; }
+              .instructors-profile-component .calendar > ul > li ul li.class icon.icon-close {
+                color: #fff; }
+                .instructors-profile-component .calendar > ul > li ul li.class icon.icon-close:before {
+                  content: "Q";
+                  font-family: "ETmodules"; }
+              .instructors-profile-component .calendar > ul > li ul li.class icon.icon-info {
+                border: 2px solid #000;
+                border-radius: 9px;
+                color: black;
+                height: 18px;
+                width: 18px; }
+                .instructors-profile-component .calendar > ul > li ul li.class icon.icon-info:before {
+                  content: "s";
+                  display: block;
+                  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif !important;
+                  line-height: 12px; }
+            .instructors-profile-component .calendar > ul > li ul li.class .info-overlay {
+              align-items: center;
+              background: black;
+              box-sizing: border-box;
+              display: flex;
+              flex-direction: column;
+              height: 100%;
+              justify-content: center;
+              left: 0;
+              padding: 1rem 2rem;
+              position: absolute;
+              top: 0;
+              width: 100%; }
         .instructors-profile-component .calendar > ul > li .day-label {
           color: #000;
           display: table-cell;

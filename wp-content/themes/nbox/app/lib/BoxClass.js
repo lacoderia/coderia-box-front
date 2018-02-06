@@ -1,6 +1,6 @@
 'use strict';
 
-function BoxClass(id, instructorId, instructorName, classroomId, date, availableSeats, description, isFree, isOpening, scheduleType) {
+function BoxClass(id, instructorId, instructorName, classroomId, date, availableSeats, description, isFree, isOpening, scheduleType, alternateInstructor) {
 
     // Private variables
     var _id = undefined;
@@ -13,6 +13,7 @@ function BoxClass(id, instructorId, instructorName, classroomId, date, available
     var _isFree = undefined;
     var _isOpening = undefined;
     var _scheduleType = undefined;
+    var _alternateInstructor = undefined;
 
 
     /**
@@ -27,8 +28,9 @@ function BoxClass(id, instructorId, instructorName, classroomId, date, available
      * @param isFree
      * @param isOpening
      * @param scheduleType
+     * @param alternateInstructor
      */
-    this.constructor = function(id, instructorId, instructorName, classroomId, date, availableSeats, description, isFree, isOpening, scheduleType) {
+    this.constructor = function(id, instructorId, instructorName, classroomId, date, availableSeats, description, isFree, isOpening, scheduleType, alternateInstructor) {
         this.setId(id);
         this.setInstructorId(instructorId);
         this.setInstructorName(instructorName);
@@ -39,6 +41,7 @@ function BoxClass(id, instructorId, instructorName, classroomId, date, available
         this.setIsFree(isFree);
         this.setIsOpening(isOpening);
         this.setScheduleType(scheduleType);
+        this.setAlternateInstructor(alternateInstructor);
     };
 
     /**
@@ -203,6 +206,22 @@ function BoxClass(id, instructorId, instructorName, classroomId, date, available
 
     /**
      *
+     * @returns {undefined}
+     */
+    this.getAlternateInstructor = function () {
+        return _alternateInstructor;
+    };
+
+    /**
+     *
+     * @param alternateInstructor
+     */
+    this.setAlternateInstructor = function (alternateInstructor) {
+        _alternateInstructor = alternateInstructor;
+    };
+
+    /**
+     *
      * @returns {string}
      */
     this.getAvailableSeatsMessage = function (showAll) {
@@ -224,6 +243,6 @@ function BoxClass(id, instructorId, instructorName, classroomId, date, available
         return message;
     };
 
-    this.constructor(id, instructorId, instructorName, classroomId, date, availableSeats, description, isFree, isOpening, scheduleType);
+    this.constructor(id, instructorId, instructorName, classroomId, date, availableSeats, description, isFree, isOpening, scheduleType, alternateInstructor);
 
 };

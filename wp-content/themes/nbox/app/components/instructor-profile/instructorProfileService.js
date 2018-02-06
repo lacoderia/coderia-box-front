@@ -42,7 +42,7 @@ nbox.factory('InstructorProfileService', ['$http', '$q', '$rootScope', 'LoggerSe
             var weeklySchedules = instructorProfile.weekly_schedules.schedules;
             for (var i = 0; i < weeklySchedules.length; i++) {
                 var item = weeklySchedules[i];
-                var boxClass = new BoxClass(item.id, instructorProfile.id, instructorProfile.first_name, item.room.id, item.datetime, item.available_seats, item.description, item.free, item.opening, new ScheduleType(item.schedule_type.id, item.schedule_type.description));
+                var boxClass = new BoxClass(item.id, instructorProfile.id, instructorProfile.first_name, item.room.id, item.datetime, item.available_seats, item.description, item.free, item.opening, new ScheduleType(item.schedule_type.id, item.schedule_type.description), (item.alternate_instructor ? item.alternate_instructor.first_name : ''));
                 boxClasses.push(boxClass);
             }
 

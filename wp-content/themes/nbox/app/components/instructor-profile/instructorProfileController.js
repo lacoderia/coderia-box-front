@@ -10,6 +10,12 @@ nbox.controller('InstructorProfileController', ['$scope', '$timeout', '$document
      */
     var showCalendar = true;
 
+    /**
+     *
+     * @type {CalendarDay}
+     */
+    var boxClassInfo = undefined;
+
     // Scope variables
     /**
      *
@@ -107,6 +113,22 @@ nbox.controller('InstructorProfileController', ['$scope', '$timeout', '$document
             }, 500);
             usSpinnerService.spin('full-spinner');
         }
+    };
+
+    /**
+     *
+     * @param boxClass
+     */
+    instructorProfileCtrl.showBoxClassInfo = function(boxClass) {
+        boxClassInfo = boxClass;
+    };
+
+    /**
+     *
+     * @param boxClass
+     */
+    instructorProfileCtrl.isBoxClassInfoShown = function(boxClass) {
+        return boxClassInfo == boxClass;
     };
 
     /**

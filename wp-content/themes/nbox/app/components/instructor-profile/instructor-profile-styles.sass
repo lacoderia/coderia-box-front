@@ -1,4 +1,5 @@
 .instructors-profile-component
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
   margin: 1rem auto 0
   width: 100%
 
@@ -126,6 +127,12 @@
                   .class-title
                     color: $color-white
 
+                  icon
+                    color: $color-white
+
+                    &.icon-info
+                      border: 2px solid $color-white
+
                 &.special
                   border: 2px solid $color-red-1
 
@@ -223,6 +230,56 @@
                   border-right: 3px solid $color-yellow-1
                   border-bottom: 3px solid transparent
                   border-top: 3px solid $color-yellow-1
+
+              .class-alternate
+                color: #fff
+                display: block
+                font-size: 0.8rem
+                font-weight: bold
+                line-height: 1rem
+                margin: 0rem
+
+              icon
+                cursor: pointer
+                font-size: 1rem
+                font-weight: bold
+                top: 8px
+                left: 8px
+                position: absolute
+
+                &.icon-close
+                  color: $color-white
+
+                  &:before
+                    content: '\51'
+                    font-family: 'ETmodules'
+
+                &.icon-info
+                  border: 2px solid $color-black
+                  border-radius: 9px
+                  color: black
+                  height: 18px
+                  width: 18px
+
+                  &:before
+                    content: 's'
+                    display: block
+                    font-family: Nunito, Helvetica, Arial, Lucida, sans-serif !important
+                    line-height: 12px
+
+              .info-overlay
+                align-items: center
+                background: rgba(0, 0, 0, 1)
+                box-sizing: border-box
+                display: flex
+                flex-direction: column
+                height: 100%
+                justify-content: center
+                left: 0
+                padding: 1rem 2rem
+                position: absolute
+                top: 0
+                width: 100%
 
         .day-label
           color: $color-black
