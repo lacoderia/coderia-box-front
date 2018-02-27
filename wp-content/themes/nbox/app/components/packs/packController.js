@@ -86,14 +86,6 @@ nbox.controller('PackController', ['$scope', '$document', '$timeout', 'SessionSe
     };
 
     /**
-     * Determines if the packs container is shown
-     * @returns {boolean}
-     */
-    var isOnlyBuying = function() {
-        return !document.getElementsByClassName('booking-component').length;
-    };
-
-    /**
      *
      * @param show
      */
@@ -144,7 +136,9 @@ nbox.controller('PackController', ['$scope', '$document', '$timeout', 'SessionSe
      * Inits the controller
      */
     packCtrl.init = function(packs) {
-        if(isOnlyBuying()) { // Si el elemento de Booking no existe
+
+        // We show the packs container on pages that don't involve booking (home & packs pages)
+        if(!document.getElementsByClassName('booking-component').length) {
             setShowPacks(true);
         }
 

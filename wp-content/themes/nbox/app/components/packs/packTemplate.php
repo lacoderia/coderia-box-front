@@ -35,4 +35,6 @@
     <div ng-show="packCtrl.isPacksListVisible()" class="actions">
         <a href="" class="close-link" ng-click="packCtrl.closePacks()">Regresar al salón</a>
     </div>
+    <!-- Sync Link -->
+    <?php locate_template( array( 'app/components/sync/syncLinkTemplate.php' ), true, true ); ?>
 </div>

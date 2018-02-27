@@ -34,6 +34,9 @@
         <div class="title">Contraseña</div>
         <div class="info">
             <div class="info-row">
+                <div style="font-size: 0.8rem; font-weight: 700;" ng-show="accountCtrl.userIsSynced()">La contraseña también se actualizará en tu cuenta de NBici</div>
+            </div>
+            <div class="info-row">
                 <div class="info-cell full-width">
                     <input type="password" placeholder="Contraseña" name="resetPassword" ng-model="accountCtrl.user.password" minlength="8" required>
                     <div class="required-message" ng-show="accountCtrl.resetForm.$submitted || accountCtrl.resetForm.resetPassword.$touched">

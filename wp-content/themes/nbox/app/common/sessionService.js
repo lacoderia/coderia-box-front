@@ -9,7 +9,7 @@ nbox.factory('SessionService', ['$http', '$rootScope', 'localStorageService', fu
     };
 
     var createSession = function (user) {
-        Session = new User(user.id, user.first_name, user.last_name, user.email, user.classes_left, user.last_class_purchased, user.active, user.coupon, user.coupon_value, user.credits, user.test);
+        Session = new User(user.id, user.first_name, user.last_name, user.email, user.classes_left, user.last_class_purchased, user.active, user.coupon, user.coupon_value, user.credits, user.test, user.linked);
         broadcast('sessionCreated');
     };
 

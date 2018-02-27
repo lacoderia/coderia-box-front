@@ -58,6 +58,14 @@ nbox.controller('AccountController', ['$scope', '$filter', 'SessionService', 'Ac
 
     /**
      *
+     * @returns {boolean}
+     */
+    accountCtrl.userIsSynced = function() {
+        return (SessionService.get())? SessionService.get().getLinked(): true;
+    };
+
+    /**
+     *
      * @returns {Appointment}
      */
     accountCtrl.getNextAppointment = function () {

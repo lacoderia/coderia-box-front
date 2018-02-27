@@ -1065,7 +1065,7 @@
       font-weight: bold; }
 
 .instructors-component {
-  margin: 10rem auto 0;
+  margin: 4rem auto 0;
   width: 100%; }
   .instructors-component h2 {
     margin: 2.5rem 0;
@@ -1909,6 +1909,86 @@
 .a2a_s_email {
   background-color: #0166ff; }
 
+.sync-component {
+  margin: 4rem auto 6rem;
+  max-width: 1024px;
+  padding: 0;
+  position: relative;
+  width: 100%; }
+  @media screen and (max-width: 1170px) {
+    .sync-component {
+      margin: 4rem auto 2rem; } }
+  .sync-component h2, .sync-component h3, .sync-component p {
+    text-align: center; }
+  .sync-component .steps-maxi-container {
+    margin-top: 4rem;
+    text-align: center; }
+    .sync-component .steps-maxi-container .step-container {
+      background-color: black;
+      border: 7px solid black;
+      border-radius: 25px;
+      display: inline-block;
+      margin-top: 30px;
+      max-width: 350px;
+      padding: 2rem 2rem;
+      text-align: left;
+      width: 100%; }
+      .sync-component .steps-maxi-container .step-container input {
+        margin-bottom: 1rem; }
+      .sync-component .steps-maxi-container .step-container button {
+        background: #C13235;
+        border-radius: 3px;
+        border: 1px solid #C13235;
+        color: #fff;
+        cursor: pointer;
+        font-family: Nunito, Helvetica, Arial, Lucida, sans-serif;
+        font-size: 1.6rem;
+        padding: 0.6rem 3rem;
+        text-align: center;
+        transition: ease 0.5s;
+        width: 100%;
+        position: relative; }
+        .sync-component .steps-maxi-container .step-container button.email-button {
+          font-size: 0.8rem;
+          margin-top: 1rem; }
+          .sync-component .steps-maxi-container .step-container button.email-button:first-child {
+            margin-top: 0rem; }
+      .sync-component .steps-maxi-container .step-container p {
+        color: #fff;
+        text-align: left;
+        margin-bottom: 1.5rem; }
+      .sync-component .steps-maxi-container .step-container a {
+        color: #fff;
+        display: block; }
+        .sync-component .steps-maxi-container .step-container a:hover {
+          color: #C13235; }
+      .sync-component .steps-maxi-container .step-container .error-message {
+        color: #C13235;
+        display: block;
+        font-family: Nunito, Helvetica, Arial, Lucida, sans-serif;
+        font-size: 0.8rem;
+        line-height: 20px;
+        margin-bottom: 1rem; }
+  .sync-component .actions {
+    text-align: center; }
+    .sync-component .actions .close-link {
+      color: #C13235;
+      font-weight: bold;
+      display: inline-block;
+      font-family: Nunito, Helvetica, Arial, Lucida, sans-serif;
+      margin: 1rem auto 2rem; }
+      .sync-component .actions .close-link:hover {
+        color: #C06265; }
+  .sync-component .button-red {
+    display: block;
+    font-size: 20px;
+    margin: 1rem auto 0;
+    max-width: 300px;
+    transform: skewX(-10deg); }
+
+#sync-link {
+  margin-top: 80px; }
+
 #left-area {
   margin: 0 !important;
   padding: 0 !important; }
@@ -2135,6 +2215,11 @@ h2 {
   font-size: 1.875rem;
   font-weight: bold; }
 
+h3 {
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold; }
+
 p {
   font-family: Nunito, Helvetica, Arial, Lucida, sans-serif;
   font-size: 0.875em; }
@@ -2252,6 +2337,40 @@ input {
   @media screen and (max-width: 768px) {
     .button-white {
       font-size: 0.8rem; } }
+
+.cool-button {
+  background: #C13235;
+  border: 1px solid #C13235;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif;
+  font-size: 20px;
+  margin: 1rem auto 0;
+  max-width: 300px;
+  padding: 0.6rem 3rem;
+  text-align: center;
+  transform: skewX(-10deg);
+  transition: ease 0.5s; }
+
+.cool-button:hover:not([disabled]) {
+  background: black;
+  border: 1px solid #000;
+  color: #C13235; }
+
+.cool-button:after {
+  font-family: "ETmodules";
+  color: #C13235;
+  content: "5";
+  position: absolute;
+  right: 1rem;
+  opacity: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: ease 0.5s; }
+
+.cool-button:hover:not([disabled]):after {
+  opacity: 1; }
 
 .history-classes {
   margin: 0;

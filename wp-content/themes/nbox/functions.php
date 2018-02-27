@@ -2,7 +2,7 @@
 
 define('child_template_directory', dirname( get_bloginfo('stylesheet_url')) );
 
-define ('VERSION', '1.1.3');
+define ('VERSION', '2.0');
 
 function version_id() {
   if ( WP_DEBUG )
@@ -26,6 +26,7 @@ function nbox_google_fonts() {
     wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Nunito:400,300,700&subset=latin', array() );
 }
 
+$nbox_url = 'http://192.168.1.119/wp_divi/';
 $api_url_base = 'http://servicios.coderia.mx:8082';
 //$api_url_base = 'https://servicios.n-box.com.mx';
 $api_args = array('sslverify' => false);
@@ -70,7 +71,7 @@ function get_packs() {
 
     $url = $api_url_base.'/packs';
     $request = new WP_Http;
-    $result = $request->get( $url, $api_args);
+    $result = $request->get( $url, $api_args );
     if( wp_remote_retrieve_response_code($result) == '200' || wp_remote_retrieve_response_code($result) == '304' ){
         $json = json_decode( $result['body'], true );
         if( isset($json['packs']) ){
@@ -259,6 +260,7 @@ function coderia_register_angular_scripts() {
     wp_register_script( 'ProfileHistoryService', get_stylesheet_directory_uri() . '/app/components/profile/history/profileHistoryService.js', '', version_id() );
     wp_register_script( 'ProfileDashboardService', get_stylesheet_directory_uri() . '/app/components/profile/dashboard/profileDashboardService.js', '', version_id() );
     wp_register_script( 'SocialService', get_stylesheet_directory_uri() . '/app/components/social/socialService.js', '', version_id() );
+    wp_register_script( 'SyncService', get_stylesheet_directory_uri() . '/app/components/sync/syncService.js', '', version_id() );
 
     // Controllers
     wp_register_script( 'RootController', get_stylesheet_directory_uri() . '/app/common/rootController.js', '', version_id() );
@@ -277,6 +279,7 @@ function coderia_register_angular_scripts() {
     wp_register_script( 'ProfileHistoryController', get_stylesheet_directory_uri() . '/app/components/profile/history/profileHistoryController.js', '', version_id() );
     wp_register_script( 'ProfileDashboardController', get_stylesheet_directory_uri() . '/app/components/profile/dashboard/profileDashboardController.js', '', version_id() );
     wp_register_script( 'NotificationController', get_stylesheet_directory_uri() . '/app/components/notification/notificationController.js', '', version_id() );
+    wp_register_script( 'SyncController', get_stylesheet_directory_uri() . '/app/components/sync/syncController.js', '', version_id() );
 
 }
 
@@ -345,7 +348,7 @@ function nbox_add_menu_items( $items, $args ) {
 
 add_action( 'wp', 'check_authorization',10,1);
 function check_authorization() {
-    if ( is_page('mi-cuenta') ){
+    if ( is_page('mi-cuenta') || is_page('sincroniza') ){
         if ( !isset($_COOKIE['nbx-headers']) ){
             wp_redirect( home_url() );
             exit;

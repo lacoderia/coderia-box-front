@@ -6,6 +6,7 @@
             <span class="user-name">{{ accountCtrl.getUserName() }}</span>
             <span class="user-mail">{{ accountCtrl.getUserEmail() }}</span>
             <a href="" class="button" ng-click="profileCtrl.events.selectModule(profileCtrl.MODULES.PERSONAL_INFO)">Editar</a>
+            <a href="<?php echo site_url() ?>/sincroniza" class="button" style="margin-left:20px;" ng-hide="accountCtrl.userIsSynced()">Sincronizar con NBici</a>
         </div> 
     </user>
     <ul class="resume">

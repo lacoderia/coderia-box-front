@@ -9,16 +9,32 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 ?>
 
 <div id="main-content">
+	<?php
+		if ( et_builder_is_product_tour_enabled() ):
+			// load fullwidth page in Product Tour mode
+			while ( have_posts() ): the_post(); ?>
+
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<div class="entry-content">
+					<?php
+						the_content();
+					?>
+					</div> <!-- .entry-content -->
+
+				</article> <!-- .et_pb_post -->
+
+		<?php endwhile;
+		else:
+	?>
 	<div class="container">
 		<div id="content-area" class="clearfix">
 			<div id="left-area">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php if (et_get_option('divi_integration_single_top') <> '' && et_get_option('divi_integrate_singletop_enable') == 'on') echo(et_get_option('divi_integration_single_top')); ?>
-
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'et_pb_post' ); ?>>
 					<?php if ( ( 'off' !== $show_default_title && $is_page_builder_used ) || ! $is_page_builder_used ) { ?>
 						<div class="et_post_meta_wrapper">
-							<h1><?php the_title(); ?></h1>
+							<h1 class="entry-title"><?php the_title(); ?></h1>
 
 						<?php
 							if ( ! post_password_required() ) :
@@ -47,7 +63,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 								} else if ( ! in_array( $post_format, array( 'gallery', 'link', 'quote' ) ) && 'on' === et_get_option( 'divi_thumbnails', 'on' ) && '' !== $thumb ) {
 									print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height );
 								} else if ( 'gallery' === $post_format ) {
-									et_gallery_images();
+									et_pb_gallery_images();
 								}
 							?>
 
@@ -58,14 +74,18 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 								switch ( $post_format ) {
 									case 'audio' :
-										printf(
-											'<div class="et_audio_content%1$s"%2$s>
-												%3$s
-											</div>',
-											esc_attr( $text_color_class ),
-											$inline_style,
-											et_pb_get_audio_player()
-										);
+										$audio_player = et_pb_get_audio_player();
+
+										if ( $audio_player ) {
+											printf(
+												'<div class="et_audio_content%1$s"%2$s>
+													%3$s
+												</div>',
+												esc_attr( $text_color_class ),
+												$inline_style,
+												$audio_player
+											);
+										}
 
 										break;
 									case 'quote' :
@@ -100,9 +120,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 					<div class="entry-content">
 					<?php
+						do_action( 'et_before_content' );
+
 						the_content();
 
-						wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
+						wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
 					?>
 					</div> <!-- .entry-content -->
 					<div class="et_post_meta_wrapper">
@@ -117,20 +139,23 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					}
 				?>
 
+					<?php if (et_get_option('divi_integration_single_bottom') <> '' && et_get_option('divi_integrate_singlebottom_enable') == 'on') echo(et_get_option('divi_integration_single_bottom')); ?>
+
 					<?php
-						if ( ( comments_open() || get_comments_number() ) && 'on' == et_get_option( 'divi_show_postcomments', 'on' ) )
+						if ( ( comments_open() || get_comments_number() ) && 'on' == et_get_option( 'divi_show_postcomments', 'on' ) ) {
 							comments_template( '', true );
+						}
 					?>
 					</div> <!-- .et_post_meta_wrapper -->
 				</article> <!-- .et_pb_post -->
 
-				<?php if (et_get_option('divi_integration_single_bottom') <> '' && et_get_option('divi_integrate_singlebottom_enable') == 'on') echo(et_get_option('divi_integration_single_bottom')); ?>
 			<?php endwhile; ?>
 			</div> <!-- #left-area -->
 
 			<?php get_sidebar(); ?>
 		</div> <!-- #content-area -->
 	</div> <!-- .container -->
+	<?php endif; ?>
 </div> <!-- #main-content -->
 
 <?php get_footer(); ?>

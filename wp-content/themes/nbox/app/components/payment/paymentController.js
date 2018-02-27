@@ -142,7 +142,7 @@ nbox.controller('PaymentController', ['$rootScope', '$scope', '$timeout', '$docu
     };
 
     /**
-     * Determines if the packs container is shown
+     * Determines if the payment container is shown
      * @returns {boolean}
      */
     var isOnlyBuying = function() {

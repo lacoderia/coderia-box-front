@@ -62,16 +62,6 @@ $A2A_SHARE_SAVE_services = array(
 		"icon" => "aol",
 		"color" => "2A2A2A",
 	),
-	"app_net" => array(
-		"name" => "App.net",
-		"icon" => "app_net",
-		"color" => "5D5D5D",
-	),
-	"baidu" => array(
-		"name" => "Baidu",
-		"icon" => "baidu",
-		"color" => "2319DC",
-	),
 	"balatarin" => array(
 		"name" => "Balatarin",
 		"icon" => "balatarin",
@@ -92,8 +82,8 @@ $A2A_SHARE_SAVE_services = array(
 		"icon" => "blinklist",
 		"color" => "3D3C3B",
 	),
-	"blogger_post" => array(
-		"name" => "Blogger Post",
+	"blogger" => array(
+		"name" => "Blogger",
 		"icon" => "blogger",
 		"color" => "FDA352",
 	),
@@ -236,6 +226,11 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "Hatena",
 		"icon" => "hatena",
 		"color" => "00A6DB",
+	),
+	"houzz" => array(
+		"name" => "Houzz",
+		"icon" => "houzz",
+		"color" => "7AC143",
 	),
 	"instapaper" => array(
 		"name" => "Instapaper",
@@ -432,6 +427,11 @@ $A2A_SHARE_SAVE_services = array(
 		"icon" => "sms",
 		"color" => "6CBE45",
 	),
+	"stocktwits" => array(
+		"name" => "StockTwits",
+		"icon" => "stocktwits",
+		"color" => "40576F",
+	),
 	"stumbleupon" => array(
 		"name" => "StumbleUpon",
 		"icon" => "stumbleupon",
@@ -456,6 +456,11 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "Telegram",
 		"icon" => "telegram",
 		"color" => "2CA5E0",
+	),
+	"threema" => array(
+		"name" => "Threema",
+		"icon" => "threema",
+		"color" => "2A2A2A",
 	),
 	"trello" => array(
 		"name" => "Trello",
@@ -496,11 +501,6 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "Wanelo",
 		"icon" => "wanelo",
 		"color" => "9cb092",
-	),
-	"webnews" => array(
-		"name" => "Webnews",
-		"icon" => "webnews",
-		"color" => "CC2512",
 	),
 	"wechat" => array(
 		"name" => "WeChat",
@@ -623,11 +623,17 @@ $A2A_FOLLOW_services = array(
 		'icon' => 'linkedin',
 		'color' => '007BB5',
 	),
+	'medium' => array( 
+		'name' => 'Medium', 
+		'href' => 'https://medium.com/@${id}',	
+		'icon' => 'medium',
+		'color' => '2A2A2A',
+	),
 	'snapchat' => array( 
 		'name' => 'Snapchat', 
 		'href' => 'https://www.snapchat.com/add/${id}',	
 		'icon' => 'snapchat',
-		'color' => '',
+		'color' => '2A2A2A',
 	),
 	'tumblr' => array( 
 		'name' => 'Tumblr', 
@@ -645,13 +651,13 @@ $A2A_FOLLOW_services = array(
 		'name' => 'YouTube', 
 		'href' => 'https://www.youtube.com/user/${id}',	
 		'icon' => 'youtube',
-		'color' => 'CD201F',
+		'color' => 'FF0000',
 	),
 	'youtube_channel' => array( 
 		'name' => 'YouTube Channel', 
 		'href' => 'https://www.youtube.com/channel/${id}',	
 		'icon' => 'youtube',
-		'color' => 'CD201F',
+		'color' => 'FF0000',
 	),
 	'feed' => array( 
 		'name' => 'RSS Feed', 

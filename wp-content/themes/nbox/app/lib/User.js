@@ -1,6 +1,6 @@
 'use strict';
 
-function User(id, firstName, lastName, email, classesLeft, lastClassPurchased, active, coupon, couponValue, balance, isTestUser) {
+function User(id, firstName, lastName, email, classesLeft, lastClassPurchased, active, coupon, couponValue, balance, isTestUser, linked) {
 
     // Private attributes
     var _id = undefined;
@@ -14,6 +14,7 @@ function User(id, firstName, lastName, email, classesLeft, lastClassPurchased, a
     var _couponValue = undefined;
     var _balance = 0;
     var _isTestUser = false;
+    var _linked = false;
 
     /**
      *
@@ -28,9 +29,10 @@ function User(id, firstName, lastName, email, classesLeft, lastClassPurchased, a
      * @param coupon
      * @param couponValue
      * @param isTestUser
+     * @param linked
      */
 
-    this.constructor = function(id, firstName, lastName, email, classesLeft, lastClassPurchased, active, coupon, couponValue, balance, isTestUser) {
+    this.constructor = function(id, firstName, lastName, email, classesLeft, lastClassPurchased, active, coupon, couponValue, balance, isTestUser, linked) {
         this.setId(id);
         this.setFirstName(firstName);
         this.setLastName(lastName);
@@ -41,7 +43,8 @@ function User(id, firstName, lastName, email, classesLeft, lastClassPurchased, a
         this.setCoupon(coupon);
         this.setCouponValue(couponValue);
         this.setBalance(balance);
-        this.setIsTestUser(isTestUser)
+        this.setIsTestUser(isTestUser);
+        this.setLinked(linked);
     };
 
     /**
@@ -225,6 +228,22 @@ function User(id, firstName, lastName, email, classesLeft, lastClassPurchased, a
         _isTestUser = isTestUser;
     };
 
-    this.constructor(id, firstName, lastName, email, classesLeft, lastClassPurchased, active, coupon, couponValue, balance, isTestUser);
+    /**
+     *
+     * @returns {undefined}
+     */
+    this.getLinked = function(){
+        return _linked;
+    };
+
+    /**
+     *
+     * @param linked
+     */
+    this.setLinked = function(linked){
+        _linked = linked;
+    };
+
+    this.constructor(id, firstName, lastName, email, classesLeft, lastClassPurchased, active, coupon, couponValue, balance, isTestUser, linked);
 
 };

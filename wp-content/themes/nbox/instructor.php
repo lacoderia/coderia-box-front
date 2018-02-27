@@ -62,7 +62,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                 <?php locate_template( array( 'app/components/packs/packTemplate.php' ), true, true ); ?>
 
                                 <!-- Instructors -->
-                                <?php locate_template( array( 'app/components/instructors/instructorTemplate.php' ), true, true ); ?>
+                                <div style="margin-top: 8rem;">
+                                    <?php locate_template( array( 'app/components/instructors/instructorTemplate.php' ), true, true ); ?>
+                                </div>
 
                                 <?php
                                 if ( ! $is_page_builder_used )

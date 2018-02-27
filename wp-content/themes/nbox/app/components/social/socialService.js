@@ -14,12 +14,12 @@ nbox.factory('SocialService', ['$http', '$q', '$rootScope', 'SessionService', 'A
      * @param data
      */
     var configTwitter = function(coupon) {
-        a2a_config.linkname = "N-Box";
+        a2a_config.linkname = "Nbox";
         a2a_config.linkurl = "www.n-box.com.mx";
 
-        var twitterTemplate = "Golpea a tu ritmo con N Box http://www.n-box.com.mx";
+        var twitterTemplate = "Golpea a tu ritmo con Nbox http://www.n-box.com.mx";
         if(coupon) {
-            twitterTemplate = "¡Te invito a vivir la experiencia N Box utilizando este cupón: " + coupon + "! Agrégalo al pagar en http://www.n-box.com.mx";
+            twitterTemplate = "¡Te invito a vivir la experiencia Nbox utilizando este cupón: " + coupon + "! Agrégalo al pagar en http://www.n-box.com.mx";
         }
 
         a2a_config.templates = {
@@ -33,7 +33,7 @@ nbox.factory('SocialService', ['$http', '$q', '$rootScope', 'SessionService', 'A
             FB.ui({
                 method: 'share',
                 href: 'http://n-box.com.mx',
-                quote: '¡Te invito a vivir la experiencia N box utilizando este cupón: ' + coupon + '! ¡Agrégalo al hacer tu siguiente compra y golpea a tu ritmo!',
+                quote: '¡Te invito a vivir la experiencia Nbox utilizando este cupón: ' + coupon + '! ¡Agrégalo al hacer tu siguiente compra y golpea a tu ritmo!',
                 caption: 'Obtén un descuento usando este cupón',
                 hashtag: "#golpeaaturitmo"
             }, function (response) {
@@ -42,7 +42,7 @@ nbox.factory('SocialService', ['$http', '$q', '$rootScope', 'SessionService', 'A
             FB.ui({
                 method: 'share',
                 href: 'http://n-box.com.mx',
-                quote: '¡Golpea a tu ritmo con N Box!',
+                quote: '¡Golpea a tu ritmo con Nbox!',
                 caption: 'http://n-box.com.mx'
             }, function (response) {
             });

@@ -7,7 +7,7 @@
 
 <div id="packs" ng-controller="PackController as packCtrl" class="pack-component" ng-init="packCtrl.init(<?php echo get_packs(); ?>)" ng-show="packCtrl.isVisible()">
     <h2>¡Aprovecha nuestros paquetes!</h2>
-    <p>¡Se parte de N-Box! Selecciona tu paquete favorito y compra online.</p>
+    <p>¡Se parte de Nbox! Selecciona tu paquete favorito y compra online.</p>
     <ul class="packs-list">
         <li ng-repeat="pack in packCtrl.packs" ng-class="{ 'selected' : packCtrl.isSelectedPack(pack), 'special' : packCtrl.isSpecialPack(pack) }">
             <a ng-click="packCtrl.selectPack(pack)" ng-if="packCtrl.isSpecialPack(pack)">
@@ -28,4 +28,6 @@
             </a>
         </li>
     </ul>
+    <!-- Sync Link -->
+    <?php locate_template( array( 'app/components/sync/syncLinkTemplate.php' ), true, true ); ?>
 </div>

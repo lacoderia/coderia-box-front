@@ -8,7 +8,7 @@
         <span us-spinner spinner-key="login-spinner"></span>
         <div class="login-container" ng-show="loginCtrl.isCurrentView(loginCtrl.VIEWS.LOGIN) || loginCtrl.isCurrentView(loginCtrl.VIEWS.SIGNUP)">
             <div class="signup-form" ng-show="loginCtrl.isCurrentView(loginCtrl.VIEWS.SIGNUP)">
-                <h2 class="section-title">Registrarte a NBox</h2>
+                <h2 class="section-title">Registrarte a Nbox</h2>
                 <form novalidate name="loginCtrl.signupForm" class="form" ng-submit="loginCtrl.signUp()">
                     <fieldset>
                         <span ng-show="loginCtrl.formErrorMessage" class="required-message error-message ">{{ loginCtrl.formErrorMessage }}</span>

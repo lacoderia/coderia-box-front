@@ -9,17 +9,49 @@ body.et-pb-preview #page-container {
 	width: 100% !important;
 }
 
+body.et-pb-preview.et_divi_builder #page-container {
+	padding: 0 !important;
+	margin: 0;
+	border: none;
+	background: none;
+}
+
 body.et-pb-preview #main-content .container {
 	margin-top: 0 !important;
 	margin-bottom: 0 !important;
 	width: 100%;
 	padding: 0 40px;
 	padding-top: 0 !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: none;
 }
 
 body.et-pb-preview {
 	background-color: #fff !important;
 	background-image: none !important;
+	border: none;
+}
+
+body.et-pb-preview.et_divi_builder {
+	color: #666;
+}
+
+body.et-pb-preview:before {
+	box-shadow: none;
+}
+
+body.et-pb-preview.et_divi_builder #main-content > .container > div,
+body.et-pb-preview.et_divi_builder #main-content > .container > div > div {
+	margin: 0;
+	padding: 0;
+	background: none;
+	box-shadow: none;
+	border: none;
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
 }
 
 @media all and ( max-width: 479px ) {
@@ -59,7 +91,7 @@ body.et-pb-preview #main-content .container:before {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	background: url( ../images/ajax-loader.gif ) no-repeat;
+	background: url( ../../../core/admin/images/ajax-loader.gif ) no-repeat;
 	width: 32px;
 	height: 32px;
 	margin: -16px 0 0 -16px;
@@ -231,7 +263,7 @@ body.et-pb-preview #main-content .container:before {
 .et_pb_prompt_modal .et_pb_prompt_buttons input.et_pb_prompt_proceed {
 	-webkit-transition: background .5s;
 	transition: background .5s;
-	background-color: #00a0d2;
+	background-color: #008bdb;
 	cursor: pointer;
 	border-radius: 0;
 	-webkit-border-radius: 0;
@@ -407,4 +439,16 @@ body.et-pb-preview #main-content .container:before {
 	100% {
 		opacity: 1;
 	}
+}
+
+/**
+ * Plugins Support
+ */
+
+/* Monarch */
+.et_monarch .et_social_inline,
+.et_monarch .et_social_flyin,
+.et_monarch .et_social_popup,
+.et_monarch .et_social_heading {
+	display: none !important;
 }

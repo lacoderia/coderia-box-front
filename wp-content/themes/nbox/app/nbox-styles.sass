@@ -26,6 +26,7 @@
 @import "components/booking/booking-styles"
 @import "components/profile/profile-styles"
 @import "components/social/social-styles"
+@import "components/sync/sync-styles"
 
 // Common styles
 #left-area
@@ -308,6 +309,11 @@ h2
   font-size: 1.875rem
   font-weight: bold
 
+h3
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+  font-size: 1.4rem
+  font-weight: bold
+
 p
   font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
   font-size: 0.875em
@@ -434,6 +440,39 @@ input
   @media screen and (max-width: $screen-xs-max)
     font-size: 0.8rem
 
+.cool-button
+  background: #C13235
+  border: 1px solid #C13235
+  color: #fff
+  cursor: pointer
+  display: block
+  font-family: Nunito, Helvetica, Arial, Lucida, sans-serif
+  font-size: 20px
+  margin: 1rem auto 0
+  max-width: 300px
+  padding: 0.6rem 3rem
+  text-align: center
+  transform: skewX(-10deg)
+  transition: ease 0.5s
+
+.cool-button:hover:not([disabled])
+  background: black
+  border: 1px solid #000
+  color: #C13235
+
+.cool-button:after
+  font-family: "ETmodules"
+  color: #C13235
+  content: "5"
+  position: absolute
+  right: 1rem
+  opacity: 0
+  top: 50%
+  transform: translateY(-50%)
+  transition: ease 0.5s
+
+.cool-button:hover:not([disabled]):after
+  opacity: 1
 
 .history-classes
   margin: 0
