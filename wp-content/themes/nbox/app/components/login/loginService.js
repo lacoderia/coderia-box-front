@@ -55,6 +55,8 @@ nbox.factory('LoginService', ['$http', '$q', 'SessionService', 'API_URL_BASE', f
 
                         var user = data.user;
                         SessionService.createSession(user);
+
+                        fbq('track', 'CompleteRegistration', {});
                     }
 
                     return data;
