@@ -57,7 +57,7 @@ nbox.factory('PackService', ['$rootScope', 'LoggerService', 'SessionService', fu
         try {
             for(var i=0; i<array.length; i++) {
                 var item = array[i];
-                list.push(new Pack(item.id, item.description, item.classes, item.price, item.special_price, item.expiration));
+                list.push(new Pack(item.id, item.description, item.classes, item.price, item.special_price, item.force_special_price, item.expiration));
             }
         } catch(error) {
             LoggerService.$logger().error(error);
@@ -86,7 +86,9 @@ nbox.factory('PackService', ['$rootScope', 'LoggerService', 'SessionService', fu
 
     var getSelectedPackPrice = function() {
         if(selectedPack){
-            if (SessionService.isAuthenticated() && !SessionService.get().getLastClassPurchased() && selectedPack.getSpecialPrice()) {
+            var isFirstPurchase = SessionService.isAuthenticated() && !SessionService.get().getLastClassPurchased();
+            var forceSpecialPrice = selectedPack.getForceSpecialPrice();
+            if ((isFirstPurchase || forceSpecialPrice) && selectedPack.getSpecialPrice()) {
                 return selectedPack.getSpecialPrice();
             } else {
                 return selectedPack.getPrice();

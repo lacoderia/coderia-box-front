@@ -1,6 +1,6 @@
 'use strict';
 
-function Pack(id, description, classes, price, specialPrice, expiration) {
+function Pack(id, description, classes, price, specialPrice, forceSpecialPrice, expiration) {
 
     // Private variables
     var _id = undefined;
@@ -8,6 +8,7 @@ function Pack(id, description, classes, price, specialPrice, expiration) {
     var _classes = undefined;
     var _price = undefined;
     var _specialPrice = undefined;
+    var _forceSpecialPrice = undefined;
     var _expiration = undefined;
 
     /**
@@ -17,14 +18,16 @@ function Pack(id, description, classes, price, specialPrice, expiration) {
      * @param classes
      * @param price
      * @param specialPrice
+     * @param forceSpecialPrice
      * @param expiration
      */
-    this.constructor = function(id, description, classes, price, specialPrice, expiration) {
+    this.constructor = function(id, description, classes, price, specialPrice, forceSpecialPrice, expiration) {
         this.setId(id);
         this.setDescription(description);
         this.setClasses(classes);
         this.setPrice(price);
         this.setSpecialPrice(specialPrice);
+        this.setForceSpecialPrice(forceSpecialPrice);
         this.setExpiration(expiration);
     };
 
@@ -110,7 +113,23 @@ function Pack(id, description, classes, price, specialPrice, expiration) {
 
     /**
      *
-     * @param specialPrice
+     * @param forceSpecialPrice
+     */
+    this.setForceSpecialPrice = function(forceSpecialPrice) {
+        _forceSpecialPrice = forceSpecialPrice;
+    };
+
+    /**
+     *
+     * @returns {undefined}
+     */
+    this.getForceSpecialPrice = function() {
+        return _forceSpecialPrice;
+    };
+
+    /**
+     *
+     * @param expiration
      */
     this.setExpiration = function(expiration) {
         _expiration = expiration;
@@ -124,6 +143,6 @@ function Pack(id, description, classes, price, specialPrice, expiration) {
         return _expiration;
     };
 
-    this.constructor(id, description, classes, price, specialPrice, expiration);
+    this.constructor(id, description, classes, price, specialPrice, forceSpecialPrice, expiration);
 
 };

@@ -125,9 +125,11 @@ nbox.controller('PackController', ['$scope', '$document', '$timeout', 'SessionSe
     };
 
     packCtrl.isSpecialPack = function(pack) {
-        if(SessionService.get()){
+        if(pack.getForceSpecialPrice()) {
+            return (pack.getSpecialPrice())? true : false;
+        } else if(SessionService.get()){
             return (!SessionService.get().getLastClassPurchased() && pack.getSpecialPrice())? true : false;
-        }else{
+        } else {
             return (pack.getSpecialPrice())? true : false;
         }
     };
